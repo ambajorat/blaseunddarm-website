@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intermittierender Selbstkatheterismus (ISK) — verständlich erklärt</title>
+<meta name="description" content="ISK verständlich erklärt: warum katheterisiert wird, wie oft, welche Mengen, was die Krankenkasse zahlt und welche Warnzeichen keinen Aufschub dulden.">
+<link rel="canonical" href="https://blaseunddarm.de/isk.html">
+<link rel="alternate" hreflang="de" href="https://blaseunddarm.de/isk.html">
+<link rel="alternate" hreflang="en" href="https://blaseunddarm.de/en/intermittent-catheterisation.html">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Intermittierender Selbstkatheterismus (ISK) — verständlich erklärt">
+<meta property="og:description" content="Warum katheterisiert wird, wie oft, welche Mengen — und wann keine Zeit für Abwarten ist.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://blaseunddarm.de/isk.html">
+<meta property="og:locale" content="de_DE">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .lede {
+    font-size: clamp(1.05rem, 1rem + 0.4vw, 1.35rem);
+    color: var(--ink-soft);
+    max-width: 48ch;
+    margin: 0 0 2rem;
+  }
+
+  .werte { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 0.95rem; }
+  .werte th, .werte td { text-align: left; padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+  .werte th { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-soft); border-bottom: 1px solid var(--line); }
+  .werte td:first-child { color: var(--ink); font-weight: 700; }
+  .werte td:nth-child(2) { color: var(--blase); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .werte td:last-child { color: var(--ink-soft); }
+
+  @media (max-width: 30rem) {
+    .werte thead { display: none; }
+    .werte tr { display: block; padding: 0.9rem 0; border-bottom: 1px solid var(--line-soft); }
+    .werte td { display: block; border: 0; padding: 0.1rem 0; }
+    .werte td:nth-child(2) { font-weight: 700; }
+    .werte td:last-child { font-size: 0.9rem; margin-top: 0.2rem; }
+  }
+
+  .warn { background: var(--ink); color: var(--paper); border-radius: 1.75rem;
+    padding: clamp(2rem, 5vw, 3.5rem); }
+  .warn h2 { color: var(--surface); }
+  .warn p { color: rgba(231, 236, 232, 0.8); }
+  .warn ul { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 0.9rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+  .warn li { padding-left: 1.6rem; position: relative;
+    color: rgba(231, 236, 232, 0.92); font-size: 0.95rem; }
+  .warn li::before { content: ""; position: absolute; left: 0; top: 0.5em;
+    width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--darm); }
+
+  .hinweis { border-left: 3px solid var(--blase); background: var(--surface);
+    padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.95rem; }
+  .hinweis p { margin: 0; color: var(--ink-soft); }
+  .hinweis strong { color: var(--ink); }
+</style>
+  <link rel="stylesheet" href="/assets/fonts.css?v=1">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="wordmark" href="/"><span class="wordmark__dots"><i></i><i></i></span> Blase &amp; Darm Manager</a>
+    <nav aria-label="Hauptnavigation">
+      <a href="/#funktionen">Funktionen</a>
+      <a href="/bristol.html">Bristol-Skala</a>
+      <a href="/miktionsprotokoll.html">Miktionsprotokoll</a>
+      <a href="/isk.html" aria-current="page">ISK</a>
+      <a href="/ueber-mich.html">Über mich</a>
+      <a href="/support.html">Support</a>
+      <a class="lang" href="/en/intermittent-catheterisation.html" hreflang="en" lang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap" style="padding-block: clamp(3rem,8vw,5rem) 0">
+    <p class="eyebrow">Nachschlagen</p>
+    <h1 style="font-family:var(--display);font-weight:300;font-size:clamp(2.2rem,1.5rem+3.4vw,4rem);line-height:1.06;letter-spacing:-.02em;margin:0 0 1.5rem;max-width:20ch">
+      Intermittierender Selbstkatheterismus, ohne Fachchinesisch.
+    </h1>
+    <p class="lede">
+      Meist ISK abgekürzt: die Blase mehrmals am Tag mit einem Einmalkatheter entleeren,
+      statt zu warten, bis sie es selbst tut. Klingt drastisch, ist aber für viele die
+      Lösung, die den Alltag zurückbringt.
+    </p>
+
+    <div class="hinweis">
+      <p>
+        <strong>Was auf dieser Seite nicht steht:</strong> wie man es macht. Die Technik
+        lernt man einmal richtig bei einer Kontinenz- und Stomaberatung, in der Reha oder
+        in einer urologischen Praxis — mit Anleitung, Übung und Rückmeldung. Eine Website
+        kann das nicht ersetzen, und der Versuch würde schaden.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Warum überhaupt katheterisieren?</h2>
+      <p>
+        Wenn die Nervenverbindung zwischen Blase und Rückenmark gestört ist — nach einer
+        Querschnittlähmung, bei Multipler Sklerose, bei Spina bifida —, arbeitet die Blase
+        nicht mehr im gewohnten Wechsel aus Füllen und Entleeren. Zwei Dinge gehen dabei
+        schief: Es bleibt Urin zurück, und der Druck in der Blase steigt.
+      </p>
+      <p>
+        Beides zusammen ist das eigentliche Problem, und es betrifft nicht die Blase,
+        sondern die Nieren. Steht der Urin unter Druck, kann er in die Harnleiter
+        zurückgedrückt werden. Restharn ist außerdem ein guter Nährboden für Keime.
+        Über Jahre kann daraus ein Nierenschaden werden — schleichend, ohne dass man
+        vorher viel merkt.
+      </p>
+      <p>
+        Der ISK unterbricht genau das: Die Blase wird regelmäßig leer, bevor der Druck
+        steigt. Deshalb gilt er in den Fachgesellschaften als Verfahren erster Wahl bei
+        neurogener Blasenfunktionsstörung — auch gegenüber dem Dauerkatheter, der auf
+        Dauer mehr Infekte und mehr Folgeprobleme mit sich bringt.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <p class="section__label">Orientierung</p>
+    <h2>Wie oft, wie viel.</h2>
+    <div class="measure">
+      <p>
+        Diese Zahlen sind Anhaltspunkte für Erwachsene. Was für dich gilt, legt dein
+        Behandlungsteam fest — abhängig von Blasenkapazität, Druckverhältnissen und dem,
+        was bei dir im Alltag funktioniert.
+      </p>
+    </div>
+    <table class="werte">
+      <thead>
+        <tr><th scope="col">Größe</th><th scope="col">Übliche Spanne</th><th scope="col">Worauf es ankommt</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Katheterisierungen pro Tag</td>
+          <td>4–6 mal</td>
+          <td>Seltener heißt größere Füllmengen und mehr Druck; häufiger ist im Alltag schwer durchzuhalten</td>
+        </tr>
+        <tr>
+          <td>Menge pro Entleerung</td>
+          <td>unter 400–500 ml</td>
+          <td>Die wichtigste Größe überhaupt. Wird sie regelmäßig überschritten, muss der Abstand kürzer werden</td>
+        </tr>
+        <tr>
+          <td>Trinkmenge pro Tag</td>
+          <td>1,5–2 l</td>
+          <td>Weniger zu trinken, um seltener katheterisieren zu müssen, ist der häufigste und schädlichste Fehler</td>
+        </tr>
+        <tr>
+          <td>Katheterstärke</td>
+          <td>12–14 Ch</td>
+          <td>Angegeben in Charrière. Wird individuell festgelegt, nicht selbst gewählt</td>
+        </tr>
+        <tr>
+          <td>Nachts</td>
+          <td>meist 0–1 mal</td>
+          <td>Hängt an der Trinkmenge am Abend und daran, ob nachts viel Urin gebildet wird</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="hinweis">
+      <p>
+        <strong>Die Faustregel dahinter:</strong> Nicht die Uhrzeit entscheidet, sondern die
+        Menge. Wer regelmäßig deutlich über 500 ml abpunktiert, katheterisiert zu selten —
+        auch wenn der Zeitplan eingehalten wurde. Genau dafür lohnt sich das Protokollieren.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Was die Krankenkasse zahlt</h2>
+      <p>
+        Einmalkatheter sind in Deutschland Hilfsmittel und werden bei entsprechender
+        Indikation von der gesetzlichen Krankenkasse übernommen. Nötig ist eine ärztliche
+        Verordnung, meist aus der Urologie. Geliefert wird dann monatlich über ein
+        Sanitätshaus oder einen Homecare-Anbieter, in der Menge, die dem verordneten
+        Rhythmus entspricht.
+      </p>
+      <p>
+        Es gibt eine gesetzliche Zuzahlung, die bei zehn Prozent liegt und pro Monat
+        gedeckelt ist. Wer chronisch krank ist, kann sich von der Zuzahlung befreien lassen
+        — das lohnt sich fast immer und läuft über einen Antrag bei der Kasse.
+      </p>
+      <p>
+        Wichtig zu wissen: Du hast die Wahl beim Produkt. Wenn ein Katheter nicht passt
+        oder schlecht gleitet, ist das kein Schicksal, sondern ein Grund, ein anderes
+        Fabrikat zu verlangen. Die meisten Hersteller schicken Muster.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Bakterien im Urin sind nicht automatisch ein Infekt</h2>
+      <p>
+        Wer katheterisiert, hat fast immer Bakterien im Urin. Das allein ist kein Infekt
+        und wird in der Regel auch nicht mit Antibiotika behandelt — man spricht von
+        asymptomatischer Bakteriurie. Behandelt wird, wenn Beschwerden dazukommen: Fieber,
+        Flankenschmerz, plötzlich trüber oder stark riechender Urin, neu auftretende
+        Inkontinenz zwischen den Katheterisierungen, oder bei Querschnittlähmung
+        vermehrte Spastik.
+      </p>
+      <p>
+        Der Unterschied ist keine Haarspalterei. Jede unnötige Antibiotikagabe erhöht die
+        Wahrscheinlichkeit, dass beim nächsten echten Infekt weniger wirkt.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="warn">
+      <h2>Wann es keinen Aufschub gibt</h2>
+      <p class="measure">
+        Vieles beim ISK lässt sich beim nächsten Termin besprechen. Diese Zeichen nicht:
+      </p>
+      <ul>
+        <li>Fieber mit Flanken- oder Rückenschmerzen</li>
+        <li>Blut im Urin, das nicht nach kurzer Zeit aufhört</li>
+        <li>Der Katheter lässt sich nicht einführen und die Blase ist voll</li>
+        <li>Kein Urin trotz deutlich gefüllter Blase</li>
+        <li>Schüttelfrost oder deutliches Krankheitsgefühl</li>
+        <li>Bei Querschnittlähmung ab etwa Höhe Th6: pochender Kopfschmerz, Schwitzen und Hautrötung oberhalb der Lähmungshöhe — Zeichen einer autonomen Dysreflexie</li>
+      </ul>
+      <p style="margin-top:2rem">
+        Die autonome Dysreflexie ist ein Notfall, und eine volle Blase ist ihr häufigster
+        Auslöser. Aufrecht hinsetzen, beengende Kleidung öffnen, die Blase entleeren,
+        ärztliche Hilfe holen.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Warum mitschreiben hilft</h2>
+      <p>
+        Beim ISK entscheidet die Menge darüber, ob der Rhythmus stimmt — und die sieht man
+        nur, wenn man sie notiert. Zwei Wochen mit Uhrzeit und Milliliter zeigen, ob die
+        Abstände passen, ob abends zu wenig getrunken wird und ob die Nacht ein Problem ist.
+        Das ist die Grundlage, auf der sich ein Intervall überhaupt sinnvoll verändern lässt.
+      </p>
+      <p>
+        Auf Papier geht das mit der
+        <a href="/miktionsprotokoll.html">Miktionsprotokoll-Vorlage</a>, die eine eigene
+        Katheter-Spalte hat. Über Wochen wird das mühsam — dafür gibt es den
+        <a href="/">Blase &amp; Darm Manager</a>: Erinnerungstimer im eigenen Intervall,
+        Eintrag in zwei Sekunden, Summen automatisch, und ein PDF-Bericht für den nächsten Termin.
+        Alles bleibt auf dem Gerät.
+      </p>
+    </div>
+    <div class="actions" style="margin-top:2.5rem">
+      <a class="btn btn--ghost" href="/miktionsprotokoll.html">Protokoll-Vorlage</a>
+      <a class="btn btn--ghost" href="/">Zur App</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__inner">
+      <span>© <span id="jahr">2026</span> Blase &amp; Darm Manager</span>
+      <nav aria-label="Rechtliches">
+        <a href="https://ploetzlich-querschnitt.de">plötzlich querschnitt</a>
+        <a href="/">Start</a>
+        <a href="/bristol.html">Bristol-Skala</a>
+        <a href="/miktionsprotokoll.html">Miktionsprotokoll</a>
+        <a href="/support.html">Support</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/en/intermittent-catheterisation.html" hreflang="en" lang="en">English</a>
+      </nav>
+    </div>
+    <p class="disclaimer">
+      Diese Seite dient der allgemeinen Information und ersetzt weder die Anleitung durch
+      Fachpersonal noch ärztliche Beratung, Diagnose oder Behandlung. Die genannten Werte
+      sind Anhaltspunkte, keine Vorgaben.
+    </p>
+    <p class="marken">Apple, das Apple-Logo, iPhone, iPad, Apple Watch, Siri und CarPlay sind Marken von Apple Inc., eingetragen in den USA und anderen Ländern. App Store und TestFlight sind Dienstleistungsmarken von Apple Inc. Diese Website steht in keiner Verbindung zu Apple Inc.</p>
+    <p><a class="nach-oben" href="#main">↑ Nach oben</a></p>
+
+  </div>
+</footer>
+
+<script>document.getElementById('jahr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

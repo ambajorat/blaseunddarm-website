@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Blase &amp; Darm Manager</title>
+<meta name="description" content="Hilfe, häufige Fragen und Kontakt zum Blase &amp; Darm Manager.">
+<link rel="canonical" href="https://blaseunddarm.de/support.html">
+<link rel="alternate" hreflang="en" href="https://blaseunddarm.de/en/support.html">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+.fb{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:1.25rem;padding:clamp(1.5rem,4vw,2rem);margin:2.5rem 0}
+.fb h3{margin-bottom:.4rem}.fb>p{margin:0 0 1.5rem;color:var(--ink-soft);font-size:.92rem}
+.fb__reihe{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr))}
+.fb label{display:block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.35rem}
+.fb input,.fb select,.fb textarea{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:.6rem;padding:.6rem .7rem}
+.fb textarea{min-height:8rem;resize:vertical}.fb__feld{margin-bottom:1rem}
+.fb__topf{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fb__status{margin-top:1rem;font-size:.92rem;min-height:1.4rem}
+.fb__status[data-art=ok]{color:var(--blase);font-weight:700}
+.fb__status[data-art=fehler]{color:var(--darm)}
+.fb button{margin-top:.5rem}.fb button[disabled]{opacity:.55}
+</style>
+  <link rel="stylesheet" href="/assets/fonts.css?v=1">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="wordmark" href="/"><span class="wordmark__dots"><i></i><i></i></span> Blase &amp; Darm Manager</a>
+    <nav aria-label="Hauptnavigation">
+      <a href="/#funktionen">Funktionen</a>
+      <a href="/bristol.html">Bristol-Skala</a>
+      <a href="/miktionsprotokoll.html">Miktionsprotokoll</a>
+      <a href="/isk.html">ISK</a>
+      <a href="/ueber-mich.html">Über mich</a>
+      <a href="/support.html" aria-current="page">Support</a>
+      <a class="lang" href="/en/support.html" hreflang="en" lang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap prose">
+  <h1>Support</h1>
+  <p class="updated">Fragen, Fehlermeldungen und Wünsche — am besten direkt per Mail.</p>
+
+  <h2>Kontakt</h2>
+  <p>
+    Schreib an <a href="mailto:b@jorat.de">b@jorat.de</a>. Hilfreich sind dabei:
+    Gerät und iOS-Version, die App-Version aus <em>Einstellungen → Über die App</em> und
+    eine kurze Beschreibung, was du erwartet hast und was stattdessen passiert ist.
+    Antwort kommt in der Regel innerhalb weniger Tage.
+  </p>
+
+  <div class="fb">
+    <h3>Rückmeldung geben</h3>
+    <p>Fehler, Wunsch oder einfach ein Hinweis — hier landet es direkt bei mir. Name und E-Mail sind freiwillig; ohne Adresse kann ich allerdings nicht antworten.</p>
+    <form id="fbForm" novalidate>
+      <div class="fb__feld"><label for="fbKat">Worum geht es</label>
+        <select id="fbKat" name="kategorie"><option value="fehler">Ein Fehler</option><option value="wunsch">Ein Wunsch</option><option value="frage">Eine Frage</option><option value="sonstiges">Etwas anderes</option></select></div>
+      <div class="fb__reihe">
+        <div class="fb__feld"><label for="fbName">Name (freiwillig)</label>
+          <input id="fbName" name="name" type="text" autocomplete="name" maxlength="120"></div>
+        <div class="fb__feld"><label for="fbMail">E-Mail (freiwillig)</label>
+          <input id="fbMail" name="email" type="email" autocomplete="email" maxlength="160"></div>
+      </div>
+      <div class="fb__feld"><label for="fbText">Deine Nachricht</label>
+        <textarea id="fbText" name="text" maxlength="4000" required placeholder="Was ist passiert, und was hattest du erwartet?"></textarea></div>
+      <div class="fb__topf" aria-hidden="true"><label for="fbWeb">Website</label>
+        <input id="fbWeb" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <button class="btn" type="submit" id="fbBtn">Absenden</button>
+      <p class="fb__status" id="fbStatus" role="status" aria-live="polite"></p>
+    </form>
+    <noscript><p>Für das Formular wird JavaScript gebraucht. Ohne geht es per Mail an <a href="mailto:b@jorat.de">b@jorat.de</a></p></noscript>
+  </div>
+
+  <script>
+  (function(){var f=document.getElementById('fbForm'),b=document.getElementById('fbBtn'),
+   s=document.getElementById('fbStatus'),start=Date.now();
+   f.addEventListener('submit',function(e){e.preventDefault();
+    var text=f.text.value.trim();
+    if(text.length<5){s.dataset.art='fehler';s.textContent='Was ist passiert, und was hattest du erwartet?';f.text.focus();return;}
+    b.disabled=true;s.dataset.art='';s.textContent='Wird gesendet …';
+    fetch('/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},
+     body:JSON.stringify({kategorie:f.kategorie.value,name:f.name.value,email:f.email.value,
+      text:text,website:f.website.value,seite:location.pathname,t:start})})
+    .then(function(r){return r.json().then(function(d){return {ok:r.ok,d:d};});})
+    .then(function(res){if(res.ok){f.reset();s.dataset.art='ok';s.textContent='Angekommen, danke. Wenn du eine Adresse hinterlassen hast, melde ich mich.';}
+      else{s.dataset.art='fehler';s.textContent=res.d.fehler||'Das hat nicht funktioniert. Schreib mir gern direkt an b@jorat.de';b.disabled=false;}})
+    .catch(function(){s.dataset.art='fehler';
+      s.innerHTML='Das hat nicht funktioniert. Schreib mir gern direkt an <a href="mailto:b@jorat.de">b@jorat.de</a>';b.disabled=false;});});})();
+  </script>
+
+  <h2>Häufige Fragen</h2>
+
+  <h3>Die Erinnerung kommt nicht</h3>
+  <p>
+    Meistens sind die Mitteilungen für die App deaktiviert oder eine Ruhezeit ist aktiv.
+    Prüfe in den iOS-Einstellungen unter <em>Mitteilungen → Blase &amp; Darm Manager</em>,
+    ob Töne und Banner erlaubt sind, und in der App, ob der Zeitraum in die eingestellte
+    Ruhezeit fällt. Auch ein aktiver Fokus-Modus kann Mitteilungen zurückhalten.
+  </p>
+
+  <h3>Einträge fehlen nach dem Gerätewechsel</h3>
+  <p>
+    Die App übernimmt Daten über das iCloud-Backup. Ist das Backup nicht aktiv gewesen,
+    hilft der CSV-Import: Auf dem alten Gerät exportieren, die Datei sichern und auf dem
+    neuen Gerät wieder importieren.
+  </p>
+
+  <h3>Wie exportiere ich meine Daten?</h3>
+  <p>
+    In den Einstellungen der App über <em>Daten exportieren</em>. Du bekommst wahlweise
+    einen PDF-Bericht mit Durchschnitten, Tagesübersicht und allen Einzeleinträgen — das
+    Blatt für den Arzttermin — oder eine CSV-Datei für die eigene Auswertung. Beides
+    entsteht auf dem Gerät und lässt sich von dort teilen, mailen oder drucken.
+  </p>
+
+  <h3>Werden meine Daten irgendwo hochgeladen?</h3>
+  <p>
+    Nein. Alles bleibt lokal auf dem Gerät, optional zusätzlich in deiner eigenen iCloud.
+    Details stehen in der <a href="/datenschutz.html">Datenschutzerklärung</a>.
+  </p>
+
+  <h3>Gibt es die App für Android?</h3>
+  <p>Ja — als direkten Download auf der <a href="/#android">Startseite</a>, ganz bewusst am Play Store vorbei.</p>
+
+  <div class="note">
+    <p>
+      Ein Fehler gefunden oder eine Funktion vermisst? Rückmeldungen fließen direkt in die
+      nächste Version ein — auch kleine.
+    </p>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__inner">
+      <span>© <span id="jahr">2026</span> Blase &amp; Darm Manager</span>
+      <nav aria-label="Rechtliches">
+        <a href="/isk.html">ISK</a>
+        <a href="/ueber-mich.html">Über mich</a>
+        <a href="/miktionsprotokoll.html">Miktionsprotokoll</a>
+        <a href="https://ploetzlich-querschnitt.de">plötzlich querschnitt</a>
+        <a href="/bristol.html">Bristol-Skala</a>
+        <a href="/">Start</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/en/support.html" hreflang="en" lang="en">English</a>
+      </nav>
+    </div>
+    <p class="marken">Apple, das Apple-Logo, iPhone, iPad, Apple Watch, Siri und CarPlay sind Marken von Apple Inc., eingetragen in den USA und anderen Ländern. App Store ist eine Dienstleistungsmarke von Apple Inc. Diese Website steht in keiner Verbindung zu Apple Inc.</p>
+    <p><a class="nach-oben" href="#main">↑ Nach oben</a></p>
+
+  </div>
+</footer>
+<script>document.getElementById('jahr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

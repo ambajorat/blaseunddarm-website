@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About me — Bladder &amp; Bowel Manager</title>
+<meta name="description" content="Who is behind Bladder &amp; Bowel Manager: André M. Bajorat, why the app exists and how it is built.">
+<link rel="canonical" href="https://blaseunddarm.de/en/about.html">
+<link rel="alternate" hreflang="de" href="https://blaseunddarm.de/ueber-mich.html">
+<link rel="alternate" hreflang="en" href="https://blaseunddarm.de/en/about.html">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="About me — Bladder &amp; Bowel Manager">
+<meta property="og:description" content="Why the app exists and who builds it.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://blaseunddarm.de/en/about.html">
+<meta property="og:locale" content="en_GB">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .lede {
+    font-size: clamp(1.05rem, 1rem + 0.4vw, 1.35rem);
+    color: var(--ink-soft);
+    max-width: 48ch;
+    margin: 0 0 2rem;
+  }
+
+  .karten {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    margin-top: 2.5rem;
+  }
+
+  .karte {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+  }
+
+  .karte h3 {
+    font-family: var(--display);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .karte p {
+    margin: 0 0 1rem;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .karte a {
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .nicht {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 0.9rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+
+  .nicht li {
+    padding-left: 1.6rem;
+    position: relative;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .nicht li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--darm);
+  }
+</style>
+  <link rel="stylesheet" href="/assets/fonts.css?v=1">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="wordmark" href="/en/"><span class="wordmark__dots"><i></i><i></i></span> Bladder &amp; Bowel Manager</a>
+    <nav aria-label="Main navigation">
+      <a href="/en/#features">Features</a>
+      <a href="/en/bristol.html">Bristol scale</a>
+      <a href="/en/bladder-diary.html">Bladder diary</a>
+      <a href="/en/intermittent-catheterisation.html">ISC</a>
+      <a href="/en/about.html" aria-current="page">About</a>
+      <a href="/en/support.html">Support</a>
+      <a class="lang" href="/ueber-mich.html" hreflang="de" lang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap" style="padding-block: clamp(3rem,8vw,5rem) 0">
+    <p class="eyebrow">About me</p>
+    <h1 style="font-family:var(--display);font-weight:300;font-size:clamp(2.2rem,1.5rem+3.4vw,4rem);line-height:1.06;letter-spacing:-.02em;margin:0 0 1.5rem;max-width:20ch">
+      I build this app because I need it myself.
+    </h1>
+    <p class="lede">
+      My name is André M. Bajorat. I live with a spinal cord injury, and since then
+      bladder and bowel management has been part of my day the way brushing your teeth is
+      for others — only with fixed times.
+    </p>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>How it came about</h2>
+      <p>
+        You leave rehab with a plan: every few hours, fixed times, and please write it
+        down. That sounds simple until the first ordinary day gets in the way — a meeting
+        overruns, a train is cancelled, and suddenly you are doing arithmetic in your head
+        about when it last happened.
+      </p>
+      <p>
+        I tried paper, the Notes app, calendar reminders. None of it lasted longer than
+        two weeks. The apps I found were either built for something else or wanted an
+        account, a server and my data. On a subject I do not even like talking about, that
+        was not an option.
+      </p>
+      <p>
+        So I started building something for myself. What came of it is now on the App
+        Store — not because it is meant to become a business, but because I suspect others
+        are in the same position.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Who works on it</h2>
+      <p>
+        Me, in the evenings and at weekends. There is no company behind it, no team, no
+        investor. That has drawbacks — some things take a while — and one advantage: when
+        you write to me, it reaches me directly and not a ticketing system.
+      </p>
+      <p>
+        A good part of what the app can do today came from messages like that. The Bristol
+        scale with symbols instead of bare numbers, for instance, or the quiet hours so that
+        nothing beeps at night.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <p class="section__label">So there is no misunderstanding</p>
+    <h2>What the app is not.</h2>
+    <ul class="nicht">
+      <li>Not a medical device. It documents; it does not diagnose.</li>
+      <li>Not a substitute for medical advice, but a preparation for it.</li>
+      <li>Not a data collection. There is no server holding your entries.</li>
+      <li>No ads, no trackers, nothing sold on to anyone.</li>
+    </ul>
+  </section>
+
+  <section class="section wrap">
+    <p class="section__label">Where else I write</p>
+    <h2>Two places where it continues.</h2>
+    <div class="karten">
+      <div class="karte">
+        <h3>plötzlich querschnitt</h3>
+        <p>
+          My blog about everyday life after a spinal cord injury: equipment, travel,
+          conversions, paperwork, and the things nobody tells you beforehand. In German.
+        </p>
+        <a href="https://ploetzlich-querschnitt.de">ploetzlich-querschnitt.de</a>
+      </div>
+      <div class="karte">
+        <h3>My book</h3>
+        <p>
+          Published in March 2026: the story of the past two years — the sudden cardiac
+          arrest while hiking, the spinal cord injury the following summer, and what has
+          come of it since. In German.
+        </p>
+        <p style="margin-bottom:0">
+          <a href="https://ploetzlich-querschnitt.de/2026/03/23/das-buch-in-papier-fuehlt-sich-gut-an/">The book</a><br>
+          <a href="https://ploetzlich-querschnitt.de/hoerbuch/">The audiobook</a><br>
+          <a href="https://ploetzlich-querschnitt.de/2026/02/01/homepunk-podcast-mit-mayte/">Told on the Hopepunk podcast</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Write to me</h2>
+      <p>
+        Bugs, wishes, or simply a note that something is unclear — all of it helps. By
+        email to <a href="mailto:b@jorat.de">b@jorat.de</a>, or through the
+        <a href="/en/support.html">support page</a>.
+      </p>
+      <p>
+        And if the app makes your day easier, a review on the App Store would mean a lot.
+        Reviews help decide who gets shown it at all.
+      </p>
+    </div>
+    <div class="actions" style="margin-top:2.5rem">
+      <a class="btn" href="https://apps.apple.com/de/app/blase-darm-manager/id6792282103">View on the App Store</a>
+      <a class="btn btn--ghost" href="/en/">Back to the home page</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__inner">
+      <span>&copy; <span id="jahr">2026</span> Bladder &amp; Bowel Manager</span>
+      <nav aria-label="Legal">
+        <a href="/en/intermittent-catheterisation.html">ISC</a>
+        <a href="https://ploetzlich-querschnitt.de" hreflang="de" lang="de">plötzlich querschnitt</a>
+        <a href="/en/">Home</a>
+        <a href="/en/bristol.html">Bristol scale</a>
+        <a href="/en/bladder-diary.html">Bladder diary</a>
+        <a href="/en/support.html">Support</a>
+        <a href="/en/privacy.html">Privacy</a>
+        <a href="/en/imprint.html">Imprint</a>
+        <a href="/ueber-mich.html" hreflang="de" lang="de">Deutsch</a>
+      </nav>
+    </div>
+    <p class="disclaimer">
+      Bladder &amp; Bowel Manager is a self-documentation tool, not a medical device. It
+      does not diagnose and does not replace medical advice.
+    </p>
+    <p class="marken">Apple, the Apple logo, iPhone, iPad, Apple Watch, Siri and CarPlay are trademarks of Apple Inc., registered in the U.S. and other countries. App Store and TestFlight are service marks of Apple Inc. This website is not affiliated with Apple Inc.</p>
+    <p><a class="nach-oben" href="#main">↑ Back to top</a></p>
+
+  </div>
+</footer>
+
+<script>document.getElementById('jahr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Bristol Stool Scale — types 1 to 7 explained</title>
+<meta name="description" content="The Bristol stool scale from type 1 to 7: what the seven types mean, what they say about digestion, and when to see a doctor.">
+<link rel="canonical" href="https://blaseunddarm.de/en/bristol.html">
+<link rel="alternate" hreflang="de" href="https://blaseunddarm.de/bristol.html">
+<link rel="alternate" hreflang="en" href="https://blaseunddarm.de/en/bristol.html">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="The Bristol Stool Scale — types 1 to 7 explained">
+<meta property="og:description" content="What the seven stool types mean and when to see a doctor.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://blaseunddarm.de/en/bristol.html">
+<meta property="og:locale" content="en_GB">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  /* Page-specific: the seven types */
+  .lede {
+    font-size: clamp(1.05rem, 1rem + 0.4vw, 1.35rem);
+    color: var(--ink-soft);
+    max-width: 48ch;
+    margin: 0 0 2rem;
+  }
+
+  .btype {
+    display: grid;
+    grid-template-columns: 3.5rem 7rem 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .btype:first-of-type { border-top: 1px solid var(--line); }
+
+  .btype__no {
+    font-family: var(--display);
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--darm);
+  }
+
+  .btype--normal .btype__no { color: var(--blase); }
+
+  .btype__art {
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.28rem;
+    justify-content: flex-start;
+  }
+
+  .btype__art i {
+    display: block;
+    background: var(--darm);
+    opacity: 0.85;
+  }
+
+  .btype--normal .btype__art i { background: var(--blase); }
+
+  /* Type 1: hard separate lumps */
+  .art1 i { width: 0.85rem; height: 0.85rem; border-radius: 50%; }
+  /* Type 2: lumpy sausage */
+  .art2 i { width: 1.5rem; height: 1.3rem; border-radius: 45% 45% 45% 45%; margin-right: -0.22rem; }
+  /* Type 3: sausage with cracks */
+  .art3 i { width: 1.35rem; height: 1rem; border-radius: 0.4rem; }
+  /* Type 4: smooth sausage */
+  .art4 i { width: 6.2rem; height: 1rem; border-radius: 0.5rem; }
+  /* Type 5: soft blobs with clear edges */
+  .art5 i { width: 1.5rem; height: 1.15rem; border-radius: 0.6rem; }
+  /* Type 6: fluffy, ragged */
+  .art6 i { width: 1.7rem; height: 1.25rem; border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
+  .art6 i:nth-child(2) { border-radius: 40% 60% 45% 55% / 60% 40% 55% 45%; }
+  /* Type 7: liquid */
+  .art7 i { width: 6.2rem; height: 0.5rem; border-radius: 999px; opacity: 0.55; }
+
+  .btype h3 { margin-bottom: 0.35rem; }
+
+  .btype p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .btype__tag {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--darm);
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+  }
+
+  .btype--normal .btype__tag { color: var(--blase); }
+
+  @media (max-width: 40rem) {
+    .btype { grid-template-columns: 2.5rem 1fr; row-gap: 0.75rem; }
+    .btype__art { grid-column: 2; height: 2.4rem; }
+    .btype__body { grid-column: 2; }
+    .art4 i, .art7 i { width: 5rem; }
+  }
+
+  .warn {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 1.75rem;
+    padding: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .warn h2 { color: var(--surface); }
+  .warn p { color: rgba(231, 236, 232, 0.8); }
+
+  .warn ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 0.9rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+
+  .warn li {
+    padding-left: 1.6rem;
+    position: relative;
+    color: rgba(231, 236, 232, 0.92);
+    font-size: 0.95rem;
+  }
+
+  .warn li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--darm);
+  }
+</style>
+  <link rel="stylesheet" href="/assets/fonts.css?v=1">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="wordmark" href="/en/"><span class="wordmark__dots"><i></i><i></i></span> Bladder &amp; Bowel Manager</a>
+    <nav aria-label="Main navigation">
+      <a href="/en/#features">Features</a>
+      <a href="/en/bristol.html" aria-current="page">Bristol scale</a>
+      <a href="/en/bladder-diary.html">Bladder diary</a>
+      <a href="/en/intermittent-catheterisation.html">ISC</a>
+      <a href="/en/about.html">About</a>
+      <a href="/en/support.html">Support</a>
+      <a class="lang" href="/bristol.html" hreflang="de" lang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap" style="padding-block: clamp(3rem,8vw,5rem) 0">
+    <p class="eyebrow">Reference</p>
+    <h1 style="font-family:var(--display);font-weight:300;font-size:clamp(2.2rem,1.5rem+3.4vw,4rem);line-height:1.06;letter-spacing:-.02em;margin:0 0 1.5rem;max-width:20ch">
+      The Bristol scale, without the jargon.
+    </h1>
+    <p class="lede">
+      Seven types, from hard and lumpy to liquid. The scale gives a subject few people
+      enjoy discussing a matter-of-fact vocabulary — at an appointment, in rehab, and
+      for yourself.
+    </p>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Why have a scale at all?</h2>
+      <p>
+        "It was sort of firm" gets you nowhere in a consultation. So in the mid-nineties
+        Stephen Lewis and Ken Heaton at the University of Bristol devised a simple
+        classification into seven shapes. It is now used worldwide — in clinics, in
+        research, and in patient groups.
+      </p>
+      <p>
+        The real value lies less in any single day than in the pattern. A type 6 after a
+        heavy evening means little. Two weeks of mostly type 1 is a pattern worth
+        discussing.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <p class="section__label">The seven types</p>
+    <h2 style="margin-bottom:2.5rem">From 1 to 7 it gets softer.</h2>
+
+    <div class="btype">
+      <span class="btype__no" aria-hidden="true">1</span>
+      <span class="btype__art art1" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <div class="btype__body">
+        <h3>Separate hard lumps</h3>
+        <p>
+          Like nuts, hard to pass. The stool spent a long time in the colon and had a lot
+          of water drawn out of it. Usually involves straining and a feeling of not being
+          finished.
+        </p>
+        <span class="btype__tag">Marked constipation</span>
+      </div>
+    </div>
+
+    <div class="btype">
+      <span class="btype__no" aria-hidden="true">2</span>
+      <span class="btype__art art2" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div class="btype__body">
+        <h3>Sausage-shaped but lumpy</h3>
+        <p>
+          The lumps from type 1 pressed together. Firm, often bulky, frequently
+          uncomfortable. The line between this and type 1 is blurry.
+        </p>
+        <span class="btype__tag">Mild constipation</span>
+      </div>
+    </div>
+
+    <div class="btype btype--normal">
+      <span class="btype__no" aria-hidden="true">3</span>
+      <span class="btype__art art3" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <div class="btype__body">
+        <h3>Sausage-shaped with cracks</h3>
+        <p>
+          Formed, but with visible cracks on the surface. Passes without much effort and
+          counts as unremarkable.
+        </p>
+        <span class="btype__tag">Normal range</span>
+      </div>
+    </div>
+
+    <div class="btype btype--normal">
+      <span class="btype__no" aria-hidden="true">4</span>
+      <span class="btype__art art4" aria-hidden="true"><i></i></span>
+      <div class="btype__body">
+        <h3>Smooth and soft, like a snake</h3>
+        <p>
+          The type most clinicians name as the target: formed, soft, no straining. Water
+          balance and transit time are in step.
+        </p>
+        <span class="btype__tag">Normal range</span>
+      </div>
+    </div>
+
+    <div class="btype">
+      <span class="btype__no" aria-hidden="true">5</span>
+      <span class="btype__art art5" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div class="btype__body">
+        <h3>Soft blobs with clear edges</h3>
+        <p>
+          Passes easily but no longer holds together. Often a sign of too little fibre —
+          or simply that things moved faster than usual.
+        </p>
+        <span class="btype__tag">Tending to loose</span>
+      </div>
+    </div>
+
+    <div class="btype">
+      <span class="btype__no" aria-hidden="true">6</span>
+      <span class="btype__art art6" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div class="btype__body">
+        <h3>Fluffy pieces with ragged edges</h3>
+        <p>
+          Mushy, with no fixed shape. The contents moved quickly, so little water was
+          reabsorbed. Common with infections, intolerances, or certain medication.
+        </p>
+        <span class="btype__tag">Mild diarrhoea</span>
+      </div>
+    </div>
+
+    <div class="btype">
+      <span class="btype__no" aria-hidden="true">7</span>
+      <span class="btype__art art7" aria-hidden="true"><i></i></span>
+      <div class="btype__body">
+        <h3>Liquid, with no solid pieces</h3>
+        <p>
+          Entirely liquid. If it lasts several days, the loss of fluid and salts is the
+          real problem — especially in children and older people.
+        </p>
+        <span class="btype__tag">Diarrhoea</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>What shapes the shape</h2>
+      <p>
+        The biggest factor is how long the contents stay in the colon: the longer, the
+        more water is drawn out and the firmer it gets. That in turn depends on fluid
+        intake and fibre, movement, daily rhythm, and whether you answer the urge or
+        routinely suppress it.
+      </p>
+      <p>
+        Then there is medication — opioids and some iron supplements firm things up,
+        magnesium and certain antibiotics loosen them. And stress, which pushes many
+        people in either direction.
+      </p>
+      <p>
+        Variation is normal. Almost nobody has type 4 seven days a week.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="warn">
+      <h2>When to seek medical advice</h2>
+      <p class="measure">
+        The scale describes a shape; it does not make a diagnosis. With any of these
+        signs, the matter belongs in expert hands rather than in a log:
+      </p>
+      <ul>
+        <li>Blood in the stool — bright red, or black and tarry</li>
+        <li>A change that lasts longer than three weeks</li>
+        <li>Unintended weight loss</li>
+        <li>Severe or persistent abdominal pain</li>
+        <li>Fever alongside diarrhoea</li>
+        <li>Symptoms that wake you at night</li>
+        <li>Bowel cancer or inflammatory bowel disease in the family</li>
+        <li>New changes from around the age of 50</li>
+      </ul>
+      <p style="margin-top:2rem">
+        When in doubt, ask early rather than late.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>A special case: neurogenic bowel</h2>
+      <p>
+        After a spinal cord injury, or with multiple sclerosis or spina bifida, the bowel
+        behaves differently because the control pathway through the spinal cord is
+        disrupted. The Bristol scale still works as a description, but the target differs:
+        people using digital stimulation or irrigation often deliberately aim for a
+        slightly firmer stool because it is easier to manage. What is right for you
+        belongs in a conversation with your care team.
+      </p>
+      <p>
+        <strong>Important with a spinal cord injury at or above roughly T6:</strong> a
+        blocked bowel can trigger autonomic dysreflexia — a dangerous blood pressure crisis
+        with a pounding headache, sweating and flushing above the level of injury. This is
+        an emergency. Sit upright, loosen tight clothing, look for the cause, and get
+        medical help.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Why it pays to write it down</h2>
+      <p>
+        Memory gets it wrong — you remember the striking days and forget the ordinary
+        ones. Two or three weeks of recorded types build a picture that holds up in a
+        consultation, and shows whether a change actually helped.
+      </p>
+      <p>
+        <a href="/en/">Bladder &amp; Bowel Manager</a> turns that into one tap per entry
+        and shows the trend across weeks. Everything stays on your device.
+      </p>
+    </div>
+    <div class="actions" style="margin-top:2.5rem">
+      <a class="btn" href="https://apps.apple.com/de/app/blase-darm-manager/id6792282103">Get it on the App Store</a>
+      <a class="btn btn--ghost" href="/en/">Back to the home page</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__inner">
+      <span>&copy; <span id="jahr">2026</span> Bladder &amp; Bowel Manager</span>
+      <nav aria-label="Legal">
+        <a href="/en/intermittent-catheterisation.html">ISC</a>
+        <a href="/en/about.html">About</a>
+        <a href="/en/bladder-diary.html">Bladder diary</a>
+        <a href="https://ploetzlich-querschnitt.de" hreflang="de" lang="de">plötzlich querschnitt</a>
+        <a href="/en/">Home</a>
+        <a href="/en/support.html">Support</a>
+        <a href="/en/privacy.html">Privacy</a>
+        <a href="/en/imprint.html">Imprint</a>
+        <a href="/bristol.html" hreflang="de" lang="de">Deutsch</a>
+      </nav>
+    </div>
+    <p class="disclaimer">
+      This page is general information and does not replace medical advice, diagnosis or
+      treatment. If you have health concerns, please consult a doctor.
+    </p>
+    <p class="marken">Apple, the Apple logo, iPhone, iPad, Apple Watch, Siri and CarPlay are trademarks of Apple Inc., registered in the U.S. and other countries. App Store and TestFlight are service marks of Apple Inc. This website is not affiliated with Apple Inc.</p>
+    <p><a class="nach-oben" href="#main">↑ Back to top</a></p>
+
+  </div>
+</footer>
+
+<script>document.getElementById('jahr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

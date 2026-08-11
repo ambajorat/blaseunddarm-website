@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über mich — Blase &amp; Darm Manager</title>
+<meta name="description" content="Wer hinter dem Blase &amp; Darm Manager steckt: André M. Bajorat, warum es die App gibt und wie sie entsteht.">
+<link rel="canonical" href="https://blaseunddarm.de/ueber-mich.html">
+<link rel="alternate" hreflang="de" href="https://blaseunddarm.de/ueber-mich.html">
+<link rel="alternate" hreflang="en" href="https://blaseunddarm.de/en/about.html">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Über mich — Blase &amp; Darm Manager">
+<meta property="og:description" content="Warum es die App gibt und wer sie baut.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://blaseunddarm.de/ueber-mich.html">
+<meta property="og:locale" content="de_DE">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .lede {
+    font-size: clamp(1.05rem, 1rem + 0.4vw, 1.35rem);
+    color: var(--ink-soft);
+    max-width: 48ch;
+    margin: 0 0 2rem;
+  }
+
+  .karten {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    margin-top: 2.5rem;
+  }
+
+  .karte {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+  }
+
+  .karte h3 {
+    font-family: var(--display);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .karte p {
+    margin: 0 0 1rem;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .karte a {
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .nicht {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 0.9rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+
+  .nicht li {
+    padding-left: 1.6rem;
+    position: relative;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .nicht li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--darm);
+  }
+</style>
+  <link rel="stylesheet" href="/assets/fonts.css?v=1">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="wordmark" href="/"><span class="wordmark__dots"><i></i><i></i></span> Blase &amp; Darm Manager</a>
+    <nav aria-label="Hauptnavigation">
+      <a href="/#funktionen">Funktionen</a>
+      <a href="/bristol.html">Bristol-Skala</a>
+      <a href="/miktionsprotokoll.html">Miktionsprotokoll</a>
+      <a href="/isk.html">ISK</a>
+      <a href="/ueber-mich.html" aria-current="page">Über mich</a>
+      <a href="/support.html">Support</a>
+      <a class="lang" href="/en/about.html" hreflang="en" lang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap" style="padding-block: clamp(3rem,8vw,5rem) 0">
+    <p class="eyebrow">Über mich</p>
+    <h1 style="font-family:var(--display);font-weight:300;font-size:clamp(2.2rem,1.5rem+3.4vw,4rem);line-height:1.06;letter-spacing:-.02em;margin:0 0 1.5rem;max-width:20ch">
+      Ich baue die App, weil ich sie selbst brauche.
+    </h1>
+    <p class="lede">
+      Mein Name ist André M. Bajorat. Ich lebe mit einer Querschnittlähmung, und
+      Blasen- und Darmmanagement gehört seitdem zu meinem Tag wie für andere das
+      Zähneputzen — nur mit Uhrzeiten.
+    </p>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Wie es dazu kam</h2>
+      <p>
+        Nach der Reha bekommt man einen Plan mit auf den Weg: alle paar Stunden, feste
+        Zeiten, und bitte mitschreiben. Das klingt einfach, bis der erste normale Tag
+        dazwischenkommt — ein Termin zieht sich, ein Zug fällt aus, und plötzlich rechnet
+        man im Kopf, wann es das letzte Mal war.
+      </p>
+      <p>
+        Ich habe es mit Zetteln versucht, mit der Notizen-App, mit Erinnerungen im Kalender.
+        Nichts davon hat länger als zwei Wochen gehalten. Die Apps, die ich fand, waren
+        entweder für etwas anderes gebaut oder wollten ein Konto, einen Server und meine
+        Daten. Bei einem Thema, über das ich nicht einmal gern spreche, war das keine
+        Option.
+      </p>
+      <p>
+        Also habe ich angefangen, mir selbst etwas zu bauen. Was daraus wurde, liegt
+        inzwischen im App Store — nicht, weil daraus ein Geschäft werden soll, sondern
+        weil ich vermute, dass es anderen ähnlich geht.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Wer daran arbeitet</h2>
+      <p>
+        Ich, abends und an Wochenenden. Es gibt keine Firma dahinter, kein Team, keinen
+        Investor. Das hat Nachteile — manches dauert — und einen Vorteil: Wenn du mir
+        schreibst, landet es direkt bei mir und nicht in einem Ticketsystem.
+      </p>
+      <p>
+        Ein guter Teil dessen, was die App inzwischen kann, kam über solche Zuschriften
+        zustande. Die Bristol-Skala mit Symbolen statt bloßer Zahlen zum Beispiel, oder die
+        Ruhezeiten, damit nachts nichts piept.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <p class="section__label">Damit es keine Missverständnisse gibt</p>
+    <h2>Was die App nicht ist.</h2>
+    <ul class="nicht">
+      <li>Kein Medizinprodukt. Sie dokumentiert, sie diagnostiziert nicht.</li>
+      <li>Kein Ersatz für ärztlichen Rat, sondern eine Vorbereitung darauf.</li>
+      <li>Keine Datensammlung. Es gibt keinen Server, auf dem deine Einträge lägen.</li>
+      <li>Keine Werbung, keine Tracker, kein Weiterverkauf von irgendetwas.</li>
+    </ul>
+  </section>
+
+  <section class="section wrap">
+    <p class="section__label">Wo ich sonst schreibe</p>
+    <h2>Zwei Orte, an denen es weitergeht.</h2>
+    <div class="karten">
+      <div class="karte">
+        <h3>plötzlich querschnitt</h3>
+        <p>
+          Mein Blog über den Alltag nach einer Querschnittlähmung: Hilfsmittel, Reisen,
+          Umbauten, Behördenkram und das, was einem vorher niemand sagt.
+        </p>
+        <a href="https://ploetzlich-querschnitt.de">ploetzlich-querschnitt.de</a>
+      </div>
+      <div class="karte">
+        <h3>Mein Buch</h3>
+        <p>
+          Im März 2026 erschienen: die Geschichte der letzten zwei Jahre — der
+          plötzliche Herztod im Harz, die Querschnittlähmung im Sommer darauf, und
+          was seitdem daraus geworden ist.
+        </p>
+        <p style="margin-bottom:0">
+          <a href="https://ploetzlich-querschnitt.de/2026/03/23/das-buch-in-papier-fuehlt-sich-gut-an/">Zum Buch</a><br>
+          <a href="https://ploetzlich-querschnitt.de/hoerbuch/">Zum Hörbuch</a><br>
+          <a href="https://ploetzlich-querschnitt.de/2026/02/01/homepunk-podcast-mit-mayte/">Im Hopepunk-Podcast erzählt</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Schreib mir</h2>
+      <p>
+        Fehler, Wünsche, oder auch nur der Hinweis, dass etwas unverständlich ist — all das
+        hilft. Am liebsten per Mail an <a href="mailto:b@jorat.de">b@jorat.de</a>, sonst
+        über die <a href="/support.html">Supportseite</a>.
+      </p>
+      <p>
+        Und wenn dir die App den Alltag leichter macht, freue ich mich über eine Bewertung
+        im App Store. Die entscheidet mit darüber, wem sie überhaupt angezeigt wird.
+      </p>
+    </div>
+    <div class="actions" style="margin-top:2.5rem">
+      <a class="btn" href="https://apps.apple.com/de/app/blase-darm-manager/id6792282103">Im App Store ansehen</a>
+      <a class="btn btn--ghost" href="/">Zur Startseite</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__inner">
+      <span>© <span id="jahr">2026</span> Blase &amp; Darm Manager</span>
+      <nav aria-label="Rechtliches">
+        <a href="/isk.html">ISK</a>
+        <a href="https://ploetzlich-querschnitt.de">plötzlich querschnitt</a>
+        <a href="/">Start</a>
+        <a href="/bristol.html">Bristol-Skala</a>
+        <a href="/miktionsprotokoll.html">Miktionsprotokoll</a>
+        <a href="/support.html">Support</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/en/about.html" hreflang="en" lang="en">English</a>
+      </nav>
+    </div>
+    <p class="disclaimer">
+      Blase &amp; Darm Manager ist ein Hilfsmittel zur Selbstdokumentation und kein
+      Medizinprodukt. Die App stellt keine Diagnosen und ersetzt keine ärztliche Beratung.
+    </p>
+    <p class="marken">Apple, das Apple-Logo, iPhone, iPad, Apple Watch, Siri und CarPlay sind Marken von Apple Inc., eingetragen in den USA und anderen Ländern. App Store und TestFlight sind Dienstleistungsmarken von Apple Inc. Diese Website steht in keiner Verbindung zu Apple Inc.</p>
+    <p><a class="nach-oben" href="#main">↑ Nach oben</a></p>
+
+  </div>
+</footer>
+
+<script>document.getElementById('jahr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

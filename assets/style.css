@@ -1,0 +1,995 @@
+/* Blase & Darm Manager — blaseunddarm.de
+   Palette: Petrol (Blase) / Ocker (Darm) auf kühlem Leinen */
+
+:root {
+  --ink: #14313a;
+  --ink-soft: #4a6068;
+  --paper: #e7ece8;
+  --surface: #fafbf9;
+  --blase: #2c7c9e;
+  --darm: #b0702c;
+  --line: rgba(20, 49, 58, 0.16);
+  --line-soft: rgba(20, 49, 58, 0.08);
+
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --wrap: 68rem;
+  --gap: clamp(3rem, 8vw, 6.5rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  width: min(100% - 2.5rem, var(--wrap));
+  margin-inline: auto;
+}
+
+a {
+  color: var(--blase);
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--darm);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 20;
+  background: var(--ink);
+  color: var(--surface);
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+}
+
+/* ---------- Kopfzeile ---------- */
+
+.masthead {
+  border-bottom: 1px solid var(--line);
+}
+
+.masthead__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  padding-block: 1.15rem;
+}
+
+
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.wordmark__dots {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+.wordmark__dots i {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  display: block;
+}
+
+.wordmark__dots i:first-child {
+  background: var(--blase);
+}
+
+.wordmark__dots i:last-child {
+  background: var(--darm);
+}
+
+.masthead nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.9rem, 2.5vw, 1.75rem);
+  font-size: 0.9rem;
+}
+
+.masthead nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.masthead nav a:hover,
+.masthead nav a[aria-current="page"] {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.lang {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  text-decoration: none;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-block: clamp(3rem, 9vw, 6rem) 0;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 1.5rem;
+}
+
+.hero h1 {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(2.4rem, 1.5rem + 4.2vw, 4.6rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem;
+  max-width: 18ch;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--blase);
+}
+
+.hero__lead {
+  font-size: clamp(1.05rem, 1rem + 0.35vw, 1.3rem);
+  max-width: 46ch;
+  color: var(--ink-soft);
+  margin: 0 0 2.25rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--ink);
+  color: var(--surface);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.btn:hover {
+  background: var(--blase);
+  color: var(--surface);
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.btn--ghost:hover {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+.actions small {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+/* ---------- Signatur: Tagesband ---------- */
+
+.rhythm {
+  margin-block: clamp(3.5rem, 8vw, 5.5rem) 0;
+  padding-bottom: var(--gap);
+}
+
+.rhythm__caption {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 1.1rem;
+}
+
+.rhythm__band {
+  position: relative;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding-block: 3rem 2.75rem;
+}
+
+.rhythm__track {
+  position: relative;
+  height: 2px;
+  background: var(--line);
+}
+
+.rhythm__track::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--blase), var(--darm));
+  transform-origin: left;
+  animation: sweep 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes sweep {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.mark {
+  position: absolute;
+  top: 50%;
+  translate: -50% -50%;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  border: 2px solid var(--paper);
+  opacity: 0;
+  animation: pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.mark--blase {
+  background: var(--blase);
+}
+
+.mark--darm {
+  background: var(--darm);
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.mark span {
+  position: absolute;
+  bottom: calc(100% + 0.6rem);
+  left: 50%;
+  translate: -50% 0;
+  white-space: nowrap;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* Erste und letzte Marke: Label am Rand ausrichten statt zentrieren */
+.mark:first-child span {
+  left: 0;
+  translate: 0 0;
+}
+
+.mark:last-child span {
+  left: auto;
+  right: 0;
+  translate: 0 0;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    scale: 0.4;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.rhythm__hours {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .rhythm__track::after,
+  .mark {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    scale: 1;
+  }
+}
+
+/* ---------- Abschnitte ---------- */
+
+.section {
+  padding-block: var(--gap);
+  border-top: 1px solid var(--line-soft);
+}
+
+.section__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 2rem;
+}
+
+h2 {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(1.8rem, 1.3rem + 2vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 0 0 1.25rem;
+  max-width: 22ch;
+}
+
+h3 {
+  font-family: var(--body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.measure {
+  max-width: 58ch;
+}
+
+.measure p + p {
+  margin-top: 1.1rem;
+}
+
+/* ---------- Für wen ---------- */
+
+.audience {
+  display: grid;
+  gap: 0.75rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.audience li {
+  border-left: 2px solid var(--blase);
+  padding: 0.2rem 0 0.2rem 1rem;
+  color: var(--ink-soft);
+}
+
+.audience li:nth-child(even) {
+  border-left-color: var(--darm);
+}
+
+/* ---------- Funktionen ---------- */
+
+.threads {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+}
+
+.thread h3 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid currentColor;
+}
+
+.thread--blase h3 {
+  color: var(--blase);
+}
+
+.thread--darm h3 {
+  color: var(--darm);
+}
+
+.thread--both h3 {
+  color: var(--ink);
+}
+
+.thread ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.thread li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 0.97rem;
+}
+
+.thread li strong {
+  display: block;
+  font-weight: 700;
+}
+
+.thread li span {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+/* ---------- Screenshots ---------- */
+
+.shots {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  margin: 0;
+}
+
+/* Bei vier Bildern auf mittleren Breiten lieber 2x2 als 3+1 */
+@media (min-width: 34rem) and (max-width: 62rem) {
+  .shots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.shots figure {
+  margin: 0;
+}
+
+.shots img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1.5rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.shots figcaption {
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* Platzhalter, solange keine echten Screenshots hinterlegt sind */
+.shot-placeholder {
+  aspect-ratio: 9 / 19.5;
+  border-radius: 1.5rem;
+  border: 1px dashed var(--line);
+  background: var(--surface);
+  display: grid;
+  place-items: center;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ---------- Datenschutz-Panel ---------- */
+
+.panel {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 1.75rem;
+  padding: clamp(2rem, 5vw, 3.5rem);
+}
+
+.panel h2 {
+  color: var(--surface);
+}
+
+.panel p {
+  color: rgba(231, 236, 232, 0.78);
+}
+
+.panel a {
+  color: var(--surface);
+}
+
+.panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.panel li {
+  padding-left: 1.6rem;
+  position: relative;
+  color: rgba(231, 236, 232, 0.9);
+  font-size: 0.95rem;
+}
+
+.panel li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--blase);
+}
+
+.panel li:nth-child(even)::before {
+  background: var(--darm);
+}
+
+/* ---------- Preis ---------- */
+
+.price {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  align-items: start;
+}
+
+.price__card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+}
+
+.price__card h3 {
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.price__card ul {
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.price__card li {
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- FAQ ---------- */
+
+.faq {
+  border-top: 1px solid var(--line);
+}
+
+.faq details {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.15rem 2.5rem 1.15rem 0;
+  font-weight: 700;
+  position: relative;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.35rem;
+  top: 50%;
+  translate: 0 -50%;
+  font-family: var(--display);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--blase);
+}
+
+.faq details[open] summary::after {
+  content: "–";
+}
+
+.faq details > div {
+  padding-bottom: 1.4rem;
+  max-width: 60ch;
+  color: var(--ink-soft);
+}
+
+/* ---------- Fließtext (Rechtsseiten) ---------- */
+
+.prose {
+  max-width: 42rem;
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.prose h1 {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(2rem, 1.5rem + 2.4vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+}
+
+.prose .updated {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  margin: 0 0 2.5rem;
+}
+
+.prose h2 {
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.55rem);
+  font-family: var(--body);
+  font-weight: 700;
+  margin: 2.75rem 0 0.75rem;
+  max-width: none;
+}
+
+.prose h3 {
+  margin-top: 1.75rem;
+}
+
+.prose p,
+.prose li {
+  color: var(--ink-soft);
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose strong {
+  color: var(--ink);
+}
+
+.note {
+  border-left: 3px solid var(--darm);
+  background: var(--surface);
+  padding: 1rem 1.25rem;
+  margin: 2rem 0;
+  font-size: 0.92rem;
+}
+
+.note p {
+  margin: 0;
+}
+
+/* ---------- Fuß ---------- */
+
+.foot {
+  border-top: 1px solid var(--line);
+  padding-block: 2.5rem 3.5rem;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.foot__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.foot nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.foot a {
+  color: var(--ink-soft);
+}
+
+.foot a:hover {
+  color: var(--ink);
+}
+
+.disclaimer {
+  margin-top: 2rem;
+  max-width: 55ch;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  opacity: 0.85;
+}
+
+/* Bei vier Bildern auf mittleren Breiten lieber 2x2 als 3+1 */
+@media (min-width: 34rem) and (max-width: 62rem) {
+  .shots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.mark--unten span { bottom: auto; top: calc(100% + 0.7rem); }
+.mark--ruhe { background: var(--paper); box-shadow: inset 0 0 0 2px var(--ink-soft); width: 0.7rem; height: 0.7rem; }
+
+/* ---------- Breite Aufnahmen (CarPlay) ---------- */
+
+.wide-shots {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  margin: 0 0 2rem;
+}
+
+/* Ab Tabletbreite immer zwei Spalten - damit ein einzelnes Bild halbe
+   Breite behaelt statt die Seite zu sprengen. */
+@media (min-width: 40rem) {
+  .wide-shots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.wide-shots figure { margin: 0; }
+
+.wide-shots img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  border-radius: 1.5rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.wide-shots figcaption {
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* Hochformat-Screenshots auf ein gemeinsames Mass bringen */
+.shots img {
+  aspect-ratio: 760 / 1574;
+  object-fit: cover;
+  object-position: top center;
+}
+
+
+/* ---------- Bildraster, Fassung mit sechs Screenshots ---------- */
+
+/* Sechs Hochformat-Aufnahmen: 3 Spalten am Desktop, 2 auf Tablets, 1 am Handy */
+.shots {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 34rem) {
+  .shots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 62rem) {
+  .shots {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.shots img {
+  aspect-ratio: 760 / 1574;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* CarPlay: greift ueber den Dateinamen, damit die Groesse unabhaengig
+   vom umgebenden Markup begrenzt bleibt. */
+img[src*="shot-carplay"] {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1280 / 692;
+  object-fit: cover;
+  display: block;
+  border-radius: 1.5rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.wide-shots {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  margin: 2rem 0 0;
+}
+
+@media (min-width: 40rem) {
+  .wide-shots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.wide-shots figure { margin: 0; }
+
+.wide-shots figcaption {
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* ===== BILDER: endgueltige Fassung, ersetzt alle frueheren Bildregeln ===== */
+
+/* Keine aspect-ratio, kein object-fit. Die Bilder haben gruppenweise
+   identische Masse, deshalb ergibt sich gleiche Hoehe von selbst.
+   aspect-ratio: auto und object-fit: fill heben frueher gesetzte Werte auf. */
+
+.shots,
+.wide-shots {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  margin: 0;
+}
+
+.wide-shots { margin-top: 2rem; }
+
+@media (min-width: 34rem) {
+  .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 40rem) {
+  .wide-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 62rem) {
+  .shots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  /* drei breite Aufnahmen */
+  .wide-shots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.shots figure,
+.wide-shots figure {
+  margin: 0;
+}
+
+.shots img,
+.wide-shots img,
+img[src*="shot-"] {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: auto;
+  object-fit: fill;
+  display: block;
+  border-radius: 1.5rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.shots figcaption,
+.wide-shots figcaption {
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* Zweizeilige Hoehe reservieren, damit die Reihen unten auf einer Linie enden */
+.shots figcaption {
+  min-height: 3.2em;
+}
+
+/* ===== ENDE BILDER ===== */
+
+/* ---------- Bericht für den Arzttermin ---------- */
+
+.bericht {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+@media (min-width: 48rem) {
+  .bericht { grid-template-columns: minmax(0, 21rem) 1fr; }
+}
+
+.bericht figure { margin: 0; }
+
+.bericht img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(20, 49, 58, 0.12);
+}
+
+.bericht h2 { margin-top: 0; }
+
+/* ===== Navigation und Fussbereich, vereinheitlicht ===== */
+
+/* Kopfzeile bleibt stehen, damit man nach einem Sprung nicht zurueckscrollen muss */
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--paper);
+}
+
+/* Navigation darf umbrechen statt Punkte zu verstecken */
+.masthead__inner { align-items: center; }
+
+.masthead nav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  row-gap: 0.4rem;
+}
+
+@media (max-width: 48rem) {
+  .masthead nav { gap: 0.35rem 0.75rem; font-size: 0.8rem; }
+  .masthead__inner { padding-block: 0.7rem; }
+  .wordmark { font-size: 1rem; }
+  .lang { padding: 0.15rem 0.55rem; font-size: 0.7rem; }
+}
+
+/* Mehr Luft hinter dem kursiven Einschub in der Ueberschrift */
+.hero h1 em { padding-right: 0.08em; }
+
+/* Sprung zurueck nach oben */
+.nach-oben {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.marken {
+  margin-top: 1.5rem;
+  max-width: 62ch;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  opacity: 0.8;
+}

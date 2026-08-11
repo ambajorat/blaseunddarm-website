@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Die Bristol-Skala — Typ 1 bis 7 verständlich erklärt</title>
+<meta name="description" content="Die Bristol-Stuhlformen-Skala von Typ 1 bis 7: was die sieben Typen bedeuten, was sie über die Verdauung verraten und wann ein Arztbesuch ratsam ist.">
+<link rel="canonical" href="https://blaseunddarm.de/bristol.html">
+<link rel="alternate" hreflang="de" href="https://blaseunddarm.de/bristol.html">
+<link rel="alternate" hreflang="en" href="https://blaseunddarm.de/en/bristol.html">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Die Bristol-Skala — Typ 1 bis 7 verständlich erklärt">
+<meta property="og:description" content="Was die sieben Stuhlformen bedeuten und wann ein Arztbesuch ratsam ist.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://blaseunddarm.de/bristol.html">
+<meta property="og:locale" content="de_DE">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  /* Nur für diese Seite: die sieben Typen */
+  .lede {
+    font-size: clamp(1.05rem, 1rem + 0.4vw, 1.35rem);
+    color: var(--ink-soft);
+    max-width: 48ch;
+    margin: 0 0 2rem;
+  }
+
+  .btype {
+    display: grid;
+    grid-template-columns: 3.5rem 7rem 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .btype:first-of-type { border-top: 1px solid var(--line); }
+
+  .btype__no {
+    font-family: var(--display);
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--darm);
+  }
+
+  .btype--normal .btype__no { color: var(--blase); }
+
+  .btype__art {
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.28rem;
+    justify-content: flex-start;
+  }
+
+  .btype__art i {
+    display: block;
+    background: var(--darm);
+    opacity: 0.85;
+  }
+
+  .btype--normal .btype__art i { background: var(--blase); }
+
+  /* Typ 1: harte, getrennte Klümpchen */
+  .art1 i { width: 0.85rem; height: 0.85rem; border-radius: 50%; }
+  /* Typ 2: klumpige Wurst */
+  .art2 i { width: 1.5rem; height: 1.3rem; border-radius: 45% 45% 45% 45%; margin-right: -0.22rem; }
+  /* Typ 3: Wurst mit Rissen */
+  .art3 i { width: 1.35rem; height: 1rem; border-radius: 0.4rem; }
+  /* Typ 4: glatte Wurst */
+  .art4 i { width: 6.2rem; height: 1rem; border-radius: 0.5rem; }
+  /* Typ 5: weiche Klumpen mit klaren Rändern */
+  .art5 i { width: 1.5rem; height: 1.15rem; border-radius: 0.6rem; }
+  /* Typ 6: flockig, ausgefranst */
+  .art6 i { width: 1.7rem; height: 1.25rem; border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
+  .art6 i:nth-child(2) { border-radius: 40% 60% 45% 55% / 60% 40% 55% 45%; }
+  /* Typ 7: flüssig */
+  .art7 i { width: 6.2rem; height: 0.5rem; border-radius: 999px; opacity: 0.55; }
+
+  .btype h3 { margin-bottom: 0.35rem; }
+
+  .btype p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .btype__tag {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--darm);
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+  }
+
+  .btype--normal .btype__tag { color: var(--blase); }
+
+  @media (max-width: 40rem) {
+    .btype { grid-template-columns: 2.5rem 1fr; row-gap: 0.75rem; }
+    .btype__art { grid-column: 2; height: 2.4rem; }
+    .btype__body { grid-column: 2; }
+    .art4 i, .art7 i { width: 5rem; }
+  }
+
+  .warn {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 1.75rem;
+    padding: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .warn h2 { color: var(--surface); }
+  .warn p { color: rgba(231, 236, 232, 0.8); }
+
+  .warn ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 0.9rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+
+  .warn li {
+    padding-left: 1.6rem;
+    position: relative;
+    color: rgba(231, 236, 232, 0.92);
+    font-size: 0.95rem;
+  }
+
+  .warn li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--darm);
+  }
+</style>
+  <link rel="stylesheet" href="/assets/fonts.css?v=1">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="wordmark" href="/"><span class="wordmark__dots"><i></i><i></i></span> Blase &amp; Darm Manager</a>
+    <nav aria-label="Hauptnavigation">
+      <a href="/#funktionen">Funktionen</a>
+      <a href="/bristol.html" aria-current="page">Bristol-Skala</a>
+      <a href="/miktionsprotokoll.html">Miktionsprotokoll</a>
+      <a href="/isk.html">ISK</a>
+      <a href="/ueber-mich.html">Über mich</a>
+      <a href="/support.html">Support</a>
+      <a class="lang" href="/en/bristol.html" hreflang="en" lang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap" style="padding-block: clamp(3rem,8vw,5rem) 0">
+    <p class="eyebrow">Nachschlagen</p>
+    <h1 style="font-family:var(--display);font-weight:300;font-size:clamp(2.2rem,1.5rem+3.4vw,4rem);line-height:1.06;letter-spacing:-.02em;margin:0 0 1.5rem;max-width:20ch">
+      Die Bristol-Skala, ohne Fachchinesisch.
+    </h1>
+    <p class="lede">
+      Sieben Typen, von hart und klumpig bis flüssig. Die Skala gibt einem Thema, über das
+      kaum jemand gern spricht, eine sachliche Sprache — beim Arzttermin, in der Reha und
+      für einen selbst.
+    </p>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Wozu überhaupt eine Skala?</h2>
+      <p>
+        „Es war irgendwie fest" hilft in einem Arztgespräch wenig. Deshalb entwickelten
+        Stephen Lewis und Ken Heaton an der Universität Bristol Mitte der Neunzigerjahre
+        eine einfache Einteilung in sieben Formen. Sie ist heute weltweit in Gebrauch —
+        in Kliniken, in Studien und in Selbsthilfegruppen.
+      </p>
+      <p>
+        Der eigentliche Nutzen liegt weniger im einzelnen Tag als im Verlauf. Ein Typ 6
+        nach einem üppigen Abend sagt wenig. Zwei Wochen überwiegend Typ 1 dagegen sind
+        ein Muster, über das sich reden lässt.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <p class="section__label">Die sieben Typen</p>
+    <h2 style="margin-bottom:2.5rem">Von 1 nach 7 wird es weicher.</h2>
+
+    <div class="btype">
+      <span class="btype__no" aria-hidden="true">1</span>
+      <span class="btype__art art1" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <div class="btype__body">
+        <h3>Einzelne harte Klümpchen</h3>
+        <p>
+          Wie Nüsse, schwer auszuscheiden. Der Stuhl war lange im Dickdarm, dem viel
+          Wasser entzogen wurde. Meist mit Pressen und einem Gefühl verbunden, nicht
+          fertig zu sein.
+        </p>
+        <span class="btype__tag">Deutliche Verstopfung</span>
+      </div>
+    </div>
+
+    <div class="btype">
+      <span class="btype__no" aria-hidden="true">2</span>
+      <span class="btype__art art2" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div class="btype__body">
+        <h3>Wurstförmig, aber klumpig</h3>
+        <p>
+          Die Klümpchen aus Typ 1 sind zusammengebacken. Fest, oft dick, häufig
+          unangenehm. Der Übergang zu Typ 1 ist fließend.
+        </p>
+        <span class="btype__tag">Leichte Verstopfung</span>
+      </div>
+    </div>
+
+    <div class="btype btype--normal">
+      <span class="btype__no" aria-hidden="true">3</span>
+      <span class="btype__art art3" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <div class="btype__body">
+        <h3>Wurstförmig mit Rissen</h3>
+        <p>
+          Geformt, aber mit sichtbaren Sprüngen an der Oberfläche. Geht ohne große Mühe
+          ab und gilt als unauffällig.
+        </p>
+        <span class="btype__tag">Normalbereich</span>
+      </div>
+    </div>
+
+    <div class="btype btype--normal">
+      <span class="btype__no" aria-hidden="true">4</span>
+      <span class="btype__art art4" aria-hidden="true"><i></i></span>
+      <div class="btype__body">
+        <h3>Glatt und weich, wie eine Schlange</h3>
+        <p>
+          Der Typ, den die meisten Fachleute als Zielbild nennen: geformt, weich,
+          ohne Pressen. Wasserhaushalt und Durchgangszeit passen zusammen.
+        </p>
+        <span class="btype__tag">Normalbereich</span>
+      </div>
+    </div>
+
+    <div class="btype">
+      <span class="btype__no" aria-hidden="true">5</span>
+      <span class="btype__art art5" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div class="btype__body">
+        <h3>Weiche Klumpen mit klaren Rändern</h3>
+        <p>
+          Geht leicht ab, ist aber nicht mehr zusammenhängend. Oft ein Hinweis auf zu
+          wenig Ballaststoffe — oder schlicht darauf, dass es schneller ging als sonst.
+        </p>
+        <span class="btype__tag">Tendenz zu weich</span>
+      </div>
+    </div>
+
+    <div class="btype">
+      <span class="btype__no" aria-hidden="true">6</span>
+      <span class="btype__art art6" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div class="btype__body">
+        <h3>Flockig, mit ausgefransten Rändern</h3>
+        <p>
+          Breiig, ohne feste Form. Der Darminhalt war schnell unterwegs, sodass wenig
+          Wasser zurückgeholt wurde. Häufig bei Infekten, Unverträglichkeiten oder
+          bestimmten Medikamenten.
+        </p>
+        <span class="btype__tag">Leichter Durchfall</span>
+      </div>
+    </div>
+
+    <div class="btype">
+      <span class="btype__no" aria-hidden="true">7</span>
+      <span class="btype__art art7" aria-hidden="true"><i></i></span>
+      <div class="btype__body">
+        <h3>Flüssig, ohne feste Bestandteile</h3>
+        <p>
+          Reine Flüssigkeit. Hält das über mehrere Tage an, ist der Flüssigkeits- und
+          Salzverlust das eigentliche Problem — besonders bei Kindern und älteren
+          Menschen.
+        </p>
+        <span class="btype__tag">Durchfall</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Was die Form beeinflusst</h2>
+      <p>
+        Am stärksten wirkt die Zeit, die der Inhalt im Dickdarm verbringt: je länger, desto
+        mehr Wasser wird entzogen und desto fester wird es. Darauf wirken vor allem
+        Trinkmenge und Ballaststoffe, Bewegung, der Tagesrhythmus und die Frage, ob man dem
+        Drang nachgibt oder ihn regelmäßig unterdrückt.
+      </p>
+      <p>
+        Dazu kommen Medikamente — Opioide und einige Eisenpräparate machen fest,
+        Magnesium und manche Antibiotika eher weich. Und Stress, der bei vielen Menschen
+        in beide Richtungen ausschlägt.
+      </p>
+      <p>
+        Schwankungen sind normal. Kaum jemand hat sieben Tage die Woche Typ 4.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="warn">
+      <h2>Wann ärztlicher Rat sinnvoll ist</h2>
+      <p class="measure">
+        Die Skala beschreibt eine Form, sie stellt keine Diagnose. Bei diesen Zeichen
+        gehört das Ganze in fachkundige Hände statt in ein Protokoll:
+      </p>
+      <ul>
+        <li>Blut im Stuhl — hellrot oder schwarz und teerartig</li>
+        <li>Eine Veränderung, die länger als drei Wochen anhält</li>
+        <li>Ungewollter Gewichtsverlust</li>
+        <li>Starke oder anhaltende Bauchschmerzen</li>
+        <li>Fieber zusammen mit Durchfall</li>
+        <li>Beschwerden, die nachts aufwecken</li>
+        <li>Darmkrebs oder chronisch-entzündliche Darmerkrankungen in der Familie</li>
+        <li>Neu aufgetretene Veränderungen ab etwa 50 Jahren</li>
+      </ul>
+      <p style="margin-top:2rem">
+        Im Zweifel lieber einmal zu früh nachfragen als zu spät.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Besonderheit: neurogener Darm</h2>
+      <p>
+        Nach einer Querschnittlähmung, bei Multipler Sklerose oder Spina bifida arbeitet
+        der Darm anders, weil die Steuerung über das Rückenmark gestört ist. Die
+        Bristol-Skala funktioniert weiterhin als Beschreibung, aber der Zielwert ist ein
+        anderer: Wer mit digitaler Stimulation oder Irrigation arbeitet, strebt oft
+        bewusst einen etwas festeren Stuhl an, weil er sich besser steuern lässt. Was für
+        dich richtig ist, gehört ins Gespräch mit deinem Behandlungsteam.
+      </p>
+      <p>
+        <strong>Wichtig bei Querschnittlähmung ab etwa Höhe Th6:</strong> Ein verstopfter
+        Darm kann eine autonome Dysreflexie auslösen — eine gefährliche Blutdruckkrise mit
+        pochendem Kopfschmerz, Schwitzen und Hautrötung oberhalb der Lähmungshöhe. Das ist
+        ein Notfall. In dem Fall aufrecht hinsetzen, beengende Kleidung öffnen, die
+        Ursache suchen und ärztliche Hilfe holen.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Warum es sich lohnt, mitzuschreiben</h2>
+      <p>
+        Aus dem Gedächtnis schätzt man daneben — man erinnert die auffälligen Tage und
+        vergisst die unauffälligen. Zwei, drei Wochen notierter Typen ergeben ein Bild,
+        das im Arztgespräch trägt und aus dem sich ablesen lässt, ob eine Umstellung
+        tatsächlich etwas gebracht hat.
+      </p>
+      <p>
+        Der <a href="/">Blase &amp; Darm Manager</a> macht daraus einen Tipp pro Eintrag
+        und zeigt den Verlauf über Wochen. Alles bleibt auf dem Gerät.
+      </p>
+    </div>
+    <div class="actions" style="margin-top:2.5rem">
+      <a class="btn" href="https://apps.apple.com/de/app/blase-darm-manager/id6792282103">Im App Store laden</a>
+      <a class="btn btn--ghost" href="/">Zur Startseite</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__inner">
+      <span>© <span id="jahr">2026</span> Blase &amp; Darm Manager</span>
+      <nav aria-label="Rechtliches">
+        <a href="/isk.html">ISK</a>
+        <a href="/ueber-mich.html">Über mich</a>
+        <a href="/miktionsprotokoll.html">Miktionsprotokoll</a>
+        <a href="https://ploetzlich-querschnitt.de">plötzlich querschnitt</a>
+        <a href="/">Start</a>
+        <a href="/support.html">Support</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/en/bristol.html" hreflang="en" lang="en">English</a>
+      </nav>
+    </div>
+    <p class="disclaimer">
+      Diese Seite dient der allgemeinen Information und ersetzt keine ärztliche Beratung,
+      Diagnose oder Behandlung. Bei gesundheitlichen Beschwerden wende dich bitte an eine
+      Ärztin oder einen Arzt.
+    </p>
+    <p class="marken">Apple, das Apple-Logo, iPhone, iPad, Apple Watch, Siri und CarPlay sind Marken von Apple Inc., eingetragen in den USA und anderen Ländern. App Store und TestFlight sind Dienstleistungsmarken von Apple Inc. Diese Website steht in keiner Verbindung zu Apple Inc.</p>
+    <p><a class="nach-oben" href="#main">↑ Nach oben</a></p>
+
+  </div>
+</footer>
+
+<script>document.getElementById('jahr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

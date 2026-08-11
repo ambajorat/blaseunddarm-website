@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Bladder &amp; Bowel Manager</title>
+<meta name="description" content="Help, common questions and contact for Bladder &amp; Bowel Manager.">
+<link rel="canonical" href="https://blaseunddarm.de/en/support.html">
+<link rel="alternate" hreflang="de" href="https://blaseunddarm.de/support.html">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+.fb{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:1.25rem;padding:clamp(1.5rem,4vw,2rem);margin:2.5rem 0}
+.fb h3{margin-bottom:.4rem}.fb>p{margin:0 0 1.5rem;color:var(--ink-soft);font-size:.92rem}
+.fb__reihe{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr))}
+.fb label{display:block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.35rem}
+.fb input,.fb select,.fb textarea{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:.6rem;padding:.6rem .7rem}
+.fb textarea{min-height:8rem;resize:vertical}.fb__feld{margin-bottom:1rem}
+.fb__topf{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fb__status{margin-top:1rem;font-size:.92rem;min-height:1.4rem}
+.fb__status[data-art=ok]{color:var(--blase);font-weight:700}
+.fb__status[data-art=fehler]{color:var(--darm)}
+.fb button{margin-top:.5rem}.fb button[disabled]{opacity:.55}
+</style>
+  <link rel="stylesheet" href="/assets/fonts.css?v=1">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="wordmark" href="/en/"><span class="wordmark__dots"><i></i><i></i></span> Bladder &amp; Bowel Manager</a>
+    <nav aria-label="Main navigation">
+      <a href="/en/#features">Features</a>
+      <a href="/en/bristol.html">Bristol scale</a>
+      <a href="/en/bladder-diary.html">Bladder diary</a>
+      <a href="/en/intermittent-catheterisation.html">ISC</a>
+      <a href="/en/about.html">About</a>
+      <a href="/en/support.html" aria-current="page">Support</a>
+      <a class="lang" href="/support.html" hreflang="de" lang="de">DE</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap prose">
+  <h1>Support</h1>
+  <p class="updated">Questions, bug reports and requests — email is the fastest route.</p>
+
+  <h2>Contact</h2>
+  <p>
+    Write to <a href="mailto:b@jorat.de">b@jorat.de</a>. It helps to include your
+    device and iOS version, the app version from <em>Settings &rarr; About</em>, and a
+    short description of what you expected and what happened instead. Replies usually
+    come within a few days.
+  </p>
+
+  <div class="fb">
+    <h3>Send feedback</h3>
+    <p>A bug, a wish, or just a note — it comes straight to me. Name and email are optional, though without an address I cannot reply.</p>
+    <form id="fbForm" novalidate>
+      <div class="fb__feld"><label for="fbKat">What is it about</label>
+        <select id="fbKat" name="kategorie"><option value="fehler">A bug</option><option value="wunsch">A wish</option><option value="frage">A question</option><option value="sonstiges">Something else</option></select></div>
+      <div class="fb__reihe">
+        <div class="fb__feld"><label for="fbName">Name (optional)</label>
+          <input id="fbName" name="name" type="text" autocomplete="name" maxlength="120"></div>
+        <div class="fb__feld"><label for="fbMail">Email (optional)</label>
+          <input id="fbMail" name="email" type="email" autocomplete="email" maxlength="160"></div>
+      </div>
+      <div class="fb__feld"><label for="fbText">Your message</label>
+        <textarea id="fbText" name="text" maxlength="4000" required placeholder="What happened, and what did you expect?"></textarea></div>
+      <div class="fb__topf" aria-hidden="true"><label for="fbWeb">Website</label>
+        <input id="fbWeb" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <button class="btn" type="submit" id="fbBtn">Send</button>
+      <p class="fb__status" id="fbStatus" role="status" aria-live="polite"></p>
+    </form>
+    <noscript><p>The form needs JavaScript. Without it, email works too: <a href="mailto:b@jorat.de">b@jorat.de</a></p></noscript>
+  </div>
+
+  <script>
+  (function(){var f=document.getElementById('fbForm'),b=document.getElementById('fbBtn'),
+   s=document.getElementById('fbStatus'),start=Date.now();
+   f.addEventListener('submit',function(e){e.preventDefault();
+    var text=f.text.value.trim();
+    if(text.length<5){s.dataset.art='fehler';s.textContent='What happened, and what did you expect?';f.text.focus();return;}
+    b.disabled=true;s.dataset.art='';s.textContent='Sending …';
+    fetch('/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},
+     body:JSON.stringify({kategorie:f.kategorie.value,name:f.name.value,email:f.email.value,
+      text:text,website:f.website.value,seite:location.pathname,t:start})})
+    .then(function(r){return r.json().then(function(d){return {ok:r.ok,d:d};});})
+    .then(function(res){if(res.ok){f.reset();s.dataset.art='ok';s.textContent='Received, thank you. If you left an address, I will get back to you.';}
+      else{s.dataset.art='fehler';s.textContent=res.d.fehler||'That did not work. Feel free to write directly to b@jorat.de';b.disabled=false;}})
+    .catch(function(){s.dataset.art='fehler';
+      s.innerHTML='That did not work. Feel free to write directly to <a href="mailto:b@jorat.de">b@jorat.de</a>';b.disabled=false;});});})();
+  </script>
+
+  <h2>Common questions</h2>
+
+  <h3>The reminder doesn't arrive</h3>
+  <p>
+    Usually notifications are switched off for the app, or quiet hours are active. Check
+    <em>Settings &rarr; Notifications &rarr; Bladder &amp; Bowel Manager</em> in iOS for sounds
+    and banners, and check in the app whether the time falls inside your quiet hours. An
+    active Focus mode can hold notifications back too.
+  </p>
+
+  <h3>Entries are missing after switching devices</h3>
+  <p>
+    The app carries data across via iCloud backup. If the backup wasn't active, use the
+    CSV import: export on the old device, keep the file, import it on the new one.
+  </p>
+
+  <h3>How do I export my data?</h3>
+  <p>
+    In the app settings under <em>Export data</em>. You can choose a PDF report with
+    averages, a daily overview and every single entry — the sheet for your appointment —
+    or a CSV file for your own analysis. Both are generated on the device and can be
+    shared, emailed or printed from there.
+  </p>
+
+  <h3>Is my data uploaded anywhere?</h3>
+  <p>
+    No. Everything stays on your device, optionally in your own iCloud as well. Details
+    are in the <a href="/en/privacy.html">privacy policy</a>.
+  </p>
+
+  <h3>Is there an Android version?</h3>
+  <p>Yes — as a direct download on the <a href="/en/#android">home page</a>, deliberately outside the Play Store.</p>
+
+  <div class="note">
+    <p>Found a bug or missing a feature? Feedback goes straight into the next version — including the small stuff.</p>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__inner">
+      <span>&copy; <span id="jahr">2026</span> Bladder &amp; Bowel Manager</span>
+      <nav aria-label="Legal">
+        <a href="/en/intermittent-catheterisation.html">ISC</a>
+        <a href="/en/about.html">About</a>
+        <a href="/en/bladder-diary.html">Bladder diary</a>
+        <a href="https://ploetzlich-querschnitt.de" hreflang="de" lang="de">plötzlich querschnitt</a>
+        <a href="/en/bristol.html">Bristol scale</a>
+        <a href="/en/">Home</a>
+        <a href="/en/privacy.html">Privacy</a>
+        <a href="/en/imprint.html">Imprint</a>
+        <a href="/support.html" hreflang="de" lang="de">Deutsch</a>
+      </nav>
+    </div>
+    <p class="marken">Apple, the Apple logo, iPhone, iPad, Apple Watch, Siri and CarPlay are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. This website is not affiliated with Apple Inc.</p>
+    <p><a class="nach-oben" href="#main">↑ Back to top</a></p>
+
+  </div>
+</footer>
+<script>document.getElementById('jahr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

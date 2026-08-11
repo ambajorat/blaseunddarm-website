@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miktionsprotokoll: Vorlage zum Ausdrucken (PDF) — Blasentagebuch richtig führen</title>
+<meta name="description" content="Miktionsprotokoll als kostenlose PDF-Vorlage für drei Tage, mit Anleitung: was eingetragen wird, welche Werte als normal gelten und was Ärzte daraus ablesen.">
+<link rel="canonical" href="https://blaseunddarm.de/miktionsprotokoll.html">
+<link rel="alternate" hreflang="de" href="https://blaseunddarm.de/miktionsprotokoll.html">
+<link rel="alternate" hreflang="en" href="https://blaseunddarm.de/en/bladder-diary.html">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Miktionsprotokoll: Vorlage zum Ausdrucken (PDF)">
+<meta property="og:description" content="Kostenlose Vorlage für drei Tage, mit Anleitung und Orientierungswerten.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://blaseunddarm.de/miktionsprotokoll.html">
+<meta property="og:locale" content="de_DE">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .lede {
+    font-size: clamp(1.05rem, 1rem + 0.4vw, 1.35rem);
+    color: var(--ink-soft);
+    max-width: 48ch;
+    margin: 0 0 2.5rem;
+  }
+
+  .download {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.75rem;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 1.5rem;
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+  }
+
+  .download__sheet {
+    width: 4.5rem;
+    height: 6.2rem;
+    border-radius: 0.35rem;
+    border: 1px solid var(--line);
+    background:
+      repeating-linear-gradient(180deg, transparent 0 0.72rem, var(--line-soft) 0.72rem 0.78rem),
+      var(--paper);
+    position: relative;
+  }
+
+  .download__sheet::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1.1rem;
+    background: var(--blase);
+    opacity: 0.85;
+    border-radius: 0.35rem 0.35rem 0 0;
+  }
+
+  .download h2 { font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.7rem); margin-bottom: 0.5rem; }
+  .download p { margin: 0 0 1.25rem; color: var(--ink-soft); font-size: 0.95rem; }
+  .download small { display: block; margin-top: 0.9rem; color: var(--ink-soft); font-size: 0.82rem; }
+
+  @media (max-width: 34rem) {
+    .download { grid-template-columns: 1fr; }
+    .download__sheet { display: none; }
+  }
+
+  .werte {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .werte th, .werte td {
+    text-align: left;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: top;
+  }
+
+  .werte th {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .werte td:first-child { color: var(--ink); font-weight: 700; }
+  .werte td:nth-child(2) { color: var(--blase); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .werte td:last-child { color: var(--ink-soft); }
+
+
+  @media (max-width: 30rem) {
+    .werte thead { display: none; }
+    .werte tr { display: block; padding: 0.9rem 0; border-bottom: 1px solid var(--line-soft); }
+    .werte td { display: block; border: 0; padding: 0.1rem 0; }
+    .werte td:nth-child(2) { font-weight: 700; }
+    .werte td:last-child { font-size: 0.9rem; margin-top: 0.2rem; }
+  }
+
+  .schritte { counter-reset: s; list-style: none; padding: 0; margin: 2rem 0 0; }
+
+  .schritte li {
+    counter-increment: s;
+    position: relative;
+    padding: 0 0 1.4rem 3rem;
+    color: var(--ink-soft);
+  }
+
+  .schritte li::before {
+    content: counter(s);
+    position: absolute;
+    left: 0;
+    top: -0.1rem;
+    font-family: var(--display);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--blase);
+    line-height: 1;
+  }
+
+  .schritte strong { display: block; color: var(--ink); margin-bottom: 0.2rem; }
+
+  .warn {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 1.75rem;
+    padding: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .warn h2 { color: var(--surface); }
+  .warn p { color: rgba(231, 236, 232, 0.8); }
+  .warn ul { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 0.9rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+  .warn li { padding-left: 1.6rem; position: relative; color: rgba(231, 236, 232, 0.92); font-size: 0.95rem; }
+  .warn li::before { content: ""; position: absolute; left: 0; top: 0.5em; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--darm); }
+</style>
+  <link rel="stylesheet" href="/assets/fonts.css?v=1">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="wordmark" href="/"><span class="wordmark__dots"><i></i><i></i></span> Blase &amp; Darm Manager</a>
+    <nav aria-label="Hauptnavigation">
+      <a href="/#funktionen">Funktionen</a>
+      <a href="/bristol.html">Bristol-Skala</a>
+      <a href="/miktionsprotokoll.html" aria-current="page">Miktionsprotokoll</a>
+      <a href="/isk.html">ISK</a>
+      <a href="/ueber-mich.html">Über mich</a>
+      <a href="/support.html">Support</a>
+      <a class="lang" href="/en/bladder-diary.html" hreflang="en" lang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="wrap" style="padding-block: clamp(3rem,8vw,5rem) 0">
+    <p class="eyebrow">Vorlage zum Ausdrucken</p>
+    <h1 style="font-family:var(--display);font-weight:300;font-size:clamp(2.2rem,1.5rem+3.4vw,4rem);line-height:1.06;letter-spacing:-.02em;margin:0 0 1.5rem;max-width:22ch">
+      Miktionsprotokoll — drei Tage, ein Blatt pro Tag.
+    </h1>
+    <p class="lede">
+      Wenn eine Ärztin ein Blasentagebuch verordnet, steht man erst mal vor der Frage,
+      was da eigentlich rein soll. Hier ist eine fertige Vorlage samt Anleitung — und was
+      am Ende daraus abgelesen wird.
+    </p>
+
+    <div class="download">
+      <div class="download__sheet" aria-hidden="true"></div>
+      <div>
+        <h2>Miktionsprotokoll als PDF</h2>
+        <p>
+          Vier Seiten A4: eine Anleitung und drei Tagesblätter mit je 22 Zeilen,
+          Spalten für Trinkmenge, Urinmenge, Harndrang, Urinverlust und Katheter,
+          dazu ein Summenfeld pro Tag.
+        </p>
+        <a class="btn" href="/downloads/miktionsprotokoll.pdf" download>PDF herunterladen</a>
+        <small>Kostenlos, ohne Anmeldung. Darf frei kopiert und weitergegeben werden.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Wozu das Ganze?</h2>
+      <p>
+        Ein Miktionsprotokoll — umgangssprachlich Blasentagebuch — ist das einfachste und
+        oft aussagekräftigste Untersuchungsmittel in der Urologie. Es kostet nichts, tut
+        nicht weh und liefert etwas, das keine Momentaufnahme in der Praxis liefern kann:
+        wie die Blase über einen normalen Tag hinweg arbeitet.
+      </p>
+      <p>
+        Deshalb steht es am Anfang, wenn es um häufigen Harndrang, nächtliches Wasserlassen,
+        Inkontinenz oder eine Blasenschwäche geht — und vor jeder Entscheidung über
+        Medikamente oder weitere Diagnostik.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <p class="section__label">Anleitung</p>
+    <h2>So führt man es richtig.</h2>
+    <ol class="schritte measure">
+      <li>
+        <strong>Drei Tage, nicht einer.</strong>
+        Am besten zwei Werktage und ein freier Tag. Ein einzelner Tag kann ein Ausrutscher
+        sein; eine ganze Woche hält kaum jemand durch.
+      </li>
+      <li>
+        <strong>Nichts umstellen.</strong>
+        Der häufigste Fehler: In der Protokollwoche plötzlich vorbildlich trinken oder
+        Toilettengänge aufschieben. Dann protokolliert man einen Tag, den man sonst nie hat.
+      </li>
+      <li>
+        <strong>Sofort eintragen.</strong>
+        Abends aus dem Gedächtnis wird es unbrauchbar — man erinnert die auffälligen
+        Momente und vergisst die unauffälligen. Das Blatt gehört neben die Toilette.
+      </li>
+      <li>
+        <strong>Messen, wo es geht.</strong>
+        Ein Messbecher genügt, oder ein Gefäß, dessen Volumen man einmal ausgelitert hat.
+        Geschätzte Werte kennzeichnen, damit später klar ist, was gemessen war.
+      </li>
+      <li>
+        <strong>Auch die Nacht zählt.</strong>
+        Jedes nächtliche Aufstehen notieren, mit Uhrzeit. Das Verhältnis von Tag- zu
+        Nachtmenge ist eine der wichtigsten Größen überhaupt.
+      </li>
+      <li>
+        <strong>Urinverlust mit Umständen.</strong>
+        Nicht nur ob, sondern wann: beim Husten, beim Aufstehen, auf dem Weg zur Toilette,
+        im Schlaf. Genau daran unterscheidet man die Formen der Inkontinenz.
+      </li>
+    </ol>
+  </section>
+
+  <section class="section wrap">
+    <p class="section__label">Orientierung</p>
+    <h2>Welche Werte als unauffällig gelten.</h2>
+    <div class="measure">
+      <p>
+        Diese Zahlen sind Anhaltspunkte für Erwachsene, keine Grenzwerte. Abweichungen
+        allein bedeuten nichts — sie sind ein Anlass, gemeinsam draufzuschauen.
+      </p>
+    </div>
+    <table class="werte">
+      <thead>
+        <tr><th scope="col">Größe</th><th scope="col">Übliche Spanne</th><th scope="col">Woran es liegen kann</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Trinkmenge pro Tag</td>
+          <td>1,5–2 l</td>
+          <td>Deutlich mehr treibt die Frequenz hoch, deutlich weniger konzentriert den Urin und reizt die Blase</td>
+        </tr>
+        <tr>
+          <td>Urinmenge pro Tag</td>
+          <td>1,2–1,8 l</td>
+          <td>Sollte ungefähr zur Trinkmenge passen; große Lücken sprechen für Messfehler</td>
+        </tr>
+        <tr>
+          <td>Entleerungen am Tag</td>
+          <td>4–8 mal</td>
+          <td>Häufiger bei überaktiver Blase, Harnwegsinfekt, Koffein oder Diuretika</td>
+        </tr>
+        <tr>
+          <td>Nachts</td>
+          <td>0–1 mal</td>
+          <td>Mehr kann auf Nykturie, Herz- oder Nierenthemen oder Schlafapnoe hindeuten</td>
+        </tr>
+        <tr>
+          <td>Menge pro Entleerung</td>
+          <td>250–450 ml</td>
+          <td>Kleine Portionen bei gereizter Blase, sehr große bei nachlassendem Blasengefühl</td>
+        </tr>
+        <tr>
+          <td>Größte Einzelmenge</td>
+          <td>bis 500 ml</td>
+          <td>Gibt einen Hinweis auf die funktionelle Blasenkapazität</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Bei neurogener Blase gelten andere Maßstäbe</h2>
+      <p>
+        Nach einer Querschnittlähmung, bei Multipler Sklerose oder Spina bifida ist das
+        Protokoll besonders nützlich — aber die Zielwerte oben passen nicht. Wer intermittierend
+        katheterisiert, arbeitet mit festen Zeiten statt mit Harndrang, und die entscheidende
+        Größe ist, dass die Einzelportion einen mit dem Behandlungsteam abgesprochenen Wert
+        nicht überschreitet. Zu große Füllmengen belasten die Nieren.
+      </p>
+      <p>
+        In der Vorlage gibt es deshalb eine eigene Katheter-Spalte. Sinnvoll ist außerdem,
+        Auffälligkeiten wie trüben oder riechenden Urin in der Bemerkungsspalte zu notieren —
+        bei Harnwegsinfekten ist das oft das erste Zeichen.
+      </p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="warn">
+      <h2>Nicht abwarten, sondern abklären lassen</h2>
+      <p class="measure">
+        Ein Protokoll ist gut, wenn Zeit ist. Bei diesen Zeichen ist keine:
+      </p>
+      <ul>
+        <li>Blut im Urin</li>
+        <li>Fieber mit Flanken- oder Rückenschmerzen</li>
+        <li>Kein Wasserlassen möglich trotz starkem Druck</li>
+        <li>Brennen mit Fieber oder Schüttelfrost</li>
+        <li>Plötzlich stark verändertes Blasenverhalten</li>
+        <li>Bei Querschnittlähmung: pochender Kopfschmerz und Schwitzen — Zeichen einer autonomen Dysreflexie</li>
+      </ul>
+      <p style="margin-top:2rem">In diesen Fällen bitte direkt ärztliche Hilfe suchen.</p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="measure">
+      <h2>Papier oder App?</h2>
+      <p>
+        Papier hat einen echten Vorteil: es liegt sichtbar da und erinnert von selbst. Für
+        drei Tage ist die Vorlage oben völlig ausreichend, und viele Praxen möchten genau
+        das sehen.
+      </p>
+      <p>
+        Über Wochen wird Papier allerdings mühsam — zusammenrechnen, Blätter sortieren,
+        Verläufe erkennen. Genau dafür gibt es den
+        <a href="/">Blase &amp; Darm Manager</a>: Erinnerungstimer, Eintrag in zwei
+        Sekunden, Summen automatisch, und ein PDF-Bericht für den nächsten Termin. Alles bleibt auf
+        dem Gerät.
+      </p>
+    </div>
+    <div class="actions" style="margin-top:2.5rem">
+      <a class="btn btn--ghost" href="/downloads/miktionsprotokoll.pdf" download>PDF-Vorlage</a>
+      <a class="btn btn--ghost" href="/">Zur App</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__inner">
+      <span>© <span id="jahr">2026</span> Blase &amp; Darm Manager</span>
+      <nav aria-label="Rechtliches">
+        <a href="/isk.html">ISK</a>
+        <a href="/ueber-mich.html">Über mich</a>
+        <a href="https://ploetzlich-querschnitt.de">plötzlich querschnitt</a>
+        <a href="/">Start</a>
+        <a href="/bristol.html">Bristol-Skala</a>
+        <a href="/support.html">Support</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/en/bladder-diary.html" hreflang="en" lang="en">English</a>
+      </nav>
+    </div>
+    <p class="disclaimer">
+      Diese Seite dient der allgemeinen Information und ersetzt keine ärztliche Beratung,
+      Diagnose oder Behandlung. Die genannten Werte sind Anhaltspunkte, keine Grenzwerte.
+    </p>
+    <p class="marken">Apple, das Apple-Logo, iPhone, iPad, Apple Watch, Siri und CarPlay sind Marken von Apple Inc., eingetragen in den USA und anderen Ländern. App Store und TestFlight sind Dienstleistungsmarken von Apple Inc. Diese Website steht in keiner Verbindung zu Apple Inc.</p>
+    <p><a class="nach-oben" href="#main">↑ Nach oben</a></p>
+
+  </div>
+</footer>
+
+<script>document.getElementById('jahr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
