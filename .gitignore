@@ -1,2 +1,3 @@
 stats/
 downloads/*.apk
+.DS_Store
