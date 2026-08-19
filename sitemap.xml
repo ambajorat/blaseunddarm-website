@@ -16,4 +16,10 @@
   <url><loc>https://blaseunddarm.de/en/about.html</loc><priority>0.5</priority></url>
   <url><loc>https://blaseunddarm.de/isk.html</loc><priority>0.9</priority></url>
   <url><loc>https://blaseunddarm.de/en/intermittent-catheterisation.html</loc><priority>0.7</priority></url>
+  <url><loc>https://blaseunddarm.de/hwi.html</loc><priority>0.9</priority></url>
+  <url><loc>https://blaseunddarm.de/en/uti-neurogenic-bladder.html</loc><priority>0.7</priority></url>
+  <url><loc>https://blaseunddarm.de/autonome-dysreflexie.html</loc><priority>0.9</priority></url>
+  <url><loc>https://blaseunddarm.de/en/autonomic-dysreflexia.html</loc><priority>0.7</priority></url>
+  <url><loc>https://blaseunddarm.de/trinkmenge.html</loc><priority>0.9</priority></url>
+  <url><loc>https://blaseunddarm.de/en/fluid-intake.html</loc><priority>0.7</priority></url>
 </urlset>
