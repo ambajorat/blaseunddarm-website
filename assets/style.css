@@ -963,3 +963,165 @@ img[src*="shot-carplay"] {
   aspect-ratio: 1280 / 692;
   object-fit: cover;
 }
+
+/* ===== Fassung 2b: Screenshots als Geräte, Download im Fokus ===== */
+
+/* Portrait-Screenshots bekommen eine Gerätefassung: dunkle Blende,
+   große Rundung — das Bildschirmfoto wird zum Telefon. */
+.phone-shot {
+  border: 9px solid #05070a !important;
+  border-radius: 2.4rem !important;
+  outline: 1px solid var(--line);
+  outline-offset: 0;
+  box-shadow: var(--shadow);
+  background: #05070a !important;
+}
+
+.hero__phone .phone-shot {
+  box-shadow: var(--shadow), 0 0 70px rgba(232, 146, 59, 0.09);
+}
+
+/* Watch-Aufnahmen in die passende Fassung */
+.watch-shots img {
+  border: 7px solid #05070a;
+  border-radius: 1.9rem;
+  outline: 1px solid var(--line);
+  background: #05070a;
+}
+
+/* Galerie: die mittlere Aufnahme sitzt versetzt — Editorial statt Raster */
+@media (min-width: 62rem) {
+  .shots--stagger figure:nth-child(2) {
+    transform: translateY(2.25rem);
+  }
+  .shots--stagger {
+    padding-bottom: 2.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shots--stagger figure:nth-child(2) { transform: none; }
+  .shots--stagger { padding-bottom: 0; }
+}
+
+/* Kompakter Download-Knopf in der Kopfzeile */
+.btn--small {
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+}
+
+/* Abschluss-CTA: der eine Moment, in dem die Seite selbst leuchtet */
+.getit {
+  background: linear-gradient(135deg, rgba(232, 146, 59, 0.14), rgba(177, 153, 221, 0.10));
+  border: 1px solid var(--line);
+  border-radius: 1.75rem;
+  padding: clamp(2.25rem, 6vw, 4rem);
+  text-align: center;
+}
+
+.getit h2 {
+  margin-inline: auto;
+}
+
+.getit p {
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 0 auto 2rem;
+}
+
+.getit .actions {
+  justify-content: center;
+}
+
+/* ===== Fassung 3: Drei-Schritte-Struktur, bildarm ===== */
+
+/* Erinnern -> Eintragen -> Verstehen: eine echte Abfolge, deshalb Nummern */
+.steps {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  counter-reset: step;
+}
+
+.step {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  position: relative;
+}
+
+.step__no {
+  display: inline-grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  font-family: var(--display);
+  font-size: 1.15rem;
+  color: #14100a;
+  background: var(--blase);
+  box-shadow: 0 0 14px rgba(232, 146, 59, 0.4);
+  margin-bottom: 1rem;
+}
+
+.step:nth-child(2) .step__no {
+  background: linear-gradient(135deg, var(--blase), var(--darm));
+}
+
+.step:nth-child(3) .step__no {
+  background: var(--darm);
+  box-shadow: 0 0 14px rgba(177, 153, 221, 0.4);
+}
+
+.step h3 {
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 0 0 0.6rem;
+}
+
+.step p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* Aufklappbare Funktionsliste: Tiefe ohne Unordnung */
+.alle-funktionen {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.alle-funktionen summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.15rem 2.5rem 1.15rem 0;
+  font-weight: 700;
+  position: relative;
+}
+
+.alle-funktionen summary::-webkit-details-marker { display: none; }
+
+.alle-funktionen summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.35rem;
+  top: 50%;
+  translate: 0 -50%;
+  font-family: var(--display);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--blase);
+}
+
+.alle-funktionen[open] summary::after { content: "–"; }
+
+.alle-funktionen > .threads { padding-bottom: 2rem; }
+
+/* Zwei Screenshots mittig, nicht raumgreifend */
+.shots--pair {
+  max-width: 36rem;
+  margin-inline: 0;
+}
