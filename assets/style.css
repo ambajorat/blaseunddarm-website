@@ -1,15 +1,20 @@
 /* Blase & Darm Manager — blaseunddarm.de
-   Palette: Petrol (Blase) / Ocker (Darm) auf kühlem Leinen */
+   Fassung 2: Nachtpalette wie die App selbst.
+   Warmes Anthrazit, Orange (Blase) und Flieder (Darm) — die Screenshots
+   der App fügen sich nahtlos ein, statt als helle Fremdkörper zu sitzen.
+   Schrift bleibt: Newsreader (Display) + Atkinson Hyperlegible (Text). */
 
 :root {
-  --ink: #14313a;
-  --ink-soft: #4a6068;
-  --paper: #e7ece8;
-  --surface: #fafbf9;
-  --blase: #2c7c9e;
-  --darm: #b0702c;
-  --line: rgba(20, 49, 58, 0.16);
-  --line-soft: rgba(20, 49, 58, 0.08);
+  --paper: #101416;
+  --surface: #1a2024;
+  --panel: #171d21;
+  --ink: #ece9e0;
+  --ink-soft: #a7aa9e;
+  --blase: #e8923b;
+  --darm: #b199dd;
+  --line: rgba(236, 233, 224, 0.16);
+  --line-soft: rgba(236, 233, 224, 0.08);
+  --shadow: 0 14px 34px rgba(0, 0, 0, 0.45), 0 3px 10px rgba(0, 0, 0, 0.35);
 
   --display: "Newsreader", Georgia, "Times New Roman", serif;
   --body: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -54,7 +59,7 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 3px solid var(--darm);
+  outline: 3px solid var(--blase);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -67,17 +72,28 @@ a:hover {
 .skip:focus {
   left: 1rem;
   top: 1rem;
-  z-index: 20;
-  background: var(--ink);
-  color: var(--surface);
+  z-index: 40;
+  background: var(--blase);
+  color: #14100a;
   padding: 0.6rem 1rem;
   border-radius: 4px;
+}
+
+::selection {
+  background: var(--blase);
+  color: #14100a;
 }
 
 /* ---------- Kopfzeile ---------- */
 
 .masthead {
   border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(16, 20, 22, 0.88);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .masthead__inner {
@@ -88,8 +104,6 @@ a:hover {
   gap: 0.75rem 1.5rem;
   padding-block: 1.15rem;
 }
-
-
 
 .wordmark {
   display: inline-flex;
@@ -117,10 +131,12 @@ a:hover {
 
 .wordmark__dots i:first-child {
   background: var(--blase);
+  box-shadow: 0 0 10px rgba(232, 146, 59, 0.55);
 }
 
 .wordmark__dots i:last-child {
   background: var(--darm);
+  box-shadow: 0 0 10px rgba(177, 153, 221, 0.5);
 }
 
 .masthead nav {
@@ -128,6 +144,9 @@ a:hover {
   align-items: center;
   gap: clamp(0.9rem, 2.5vw, 1.75rem);
   font-size: 0.9rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  row-gap: 0.4rem;
 }
 
 .masthead nav a {
@@ -153,10 +172,52 @@ a:hover {
   text-decoration: none;
 }
 
+@media (max-width: 48rem) {
+  .masthead nav { gap: 0.35rem 0.75rem; font-size: 0.8rem; }
+  .masthead__inner { padding-block: 0.7rem; }
+  .wordmark { font-size: 1rem; }
+  .lang { padding: 0.15rem 0.55rem; font-size: 0.7rem; }
+}
+
 /* ---------- Hero ---------- */
 
 .hero {
-  padding-block: clamp(3rem, 9vw, 6rem) 0;
+  padding-block: clamp(3rem, 8vw, 5.5rem) 0;
+}
+
+.hero__grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+@media (min-width: 56rem) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  }
+}
+
+.hero__phone {
+  margin: 0;
+  display: none;
+}
+
+@media (min-width: 56rem) {
+  .hero__phone {
+    display: block;
+    max-width: 21rem;
+    justify-self: end;
+  }
+}
+
+.hero__phone img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1.75rem;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow), 0 0 60px rgba(232, 146, 59, 0.07);
 }
 
 .eyebrow {
@@ -180,6 +241,7 @@ a:hover {
 .hero h1 em {
   font-style: italic;
   color: var(--blase);
+  padding-right: 0.08em;
 }
 
 .hero__lead {
@@ -189,6 +251,13 @@ a:hover {
   margin: 0 0 2.25rem;
 }
 
+.hero__version {
+  margin-top: 1.5rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  max-width: 46ch;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -196,24 +265,30 @@ a:hover {
   gap: 1rem 1.75rem;
 }
 
+.actions img[src*="app-store-badge"] {
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: var(--ink);
-  color: var(--surface);
+  background: var(--blase);
+  color: #14100a;
   text-decoration: none;
   font-weight: 700;
   font-size: 0.95rem;
   padding: 0.85rem 1.5rem;
   border-radius: 999px;
-  transition: transform 0.18s ease, background 0.18s ease;
+  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
 }
 
 .btn:hover {
-  background: var(--blase);
-  color: var(--surface);
+  background: var(--ink);
+  color: #14100a;
   transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .btn--ghost {
@@ -224,7 +299,7 @@ a:hover {
 
 .btn--ghost:hover {
   background: var(--ink);
-  color: var(--surface);
+  color: var(--paper);
 }
 
 .actions small {
@@ -257,7 +332,7 @@ a:hover {
 .rhythm__track {
   position: relative;
   height: 2px;
-  background: var(--line);
+  background: var(--line-soft);
 }
 
 .rhythm__track::after {
@@ -265,17 +340,14 @@ a:hover {
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, var(--blase), var(--darm));
+  box-shadow: 0 0 18px rgba(232, 146, 59, 0.35);
   transform-origin: left;
   animation: sweep 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes sweep {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
 .mark {
@@ -292,12 +364,21 @@ a:hover {
 
 .mark--blase {
   background: var(--blase);
+  box-shadow: 0 0 12px rgba(232, 146, 59, 0.65);
 }
 
 .mark--darm {
   background: var(--darm);
+  box-shadow: 0 0 12px rgba(177, 153, 221, 0.6);
   width: 1.15rem;
   height: 1.15rem;
+}
+
+.mark--ruhe {
+  background: var(--paper);
+  box-shadow: inset 0 0 0 2px var(--ink-soft);
+  width: 0.7rem;
+  height: 0.7rem;
 }
 
 .mark span {
@@ -312,7 +393,11 @@ a:hover {
   color: var(--ink-soft);
 }
 
-/* Erste und letzte Marke: Label am Rand ausrichten statt zentrieren */
+.mark--unten span {
+  bottom: auto;
+  top: calc(100% + 0.7rem);
+}
+
 .mark:first-child span {
   left: 0;
   translate: 0 0;
@@ -325,14 +410,8 @@ a:hover {
 }
 
 @keyframes pop {
-  from {
-    opacity: 0;
-    scale: 0.4;
-  }
-  to {
-    opacity: 1;
-    scale: 1;
-  }
+  from { opacity: 0; scale: 0.4; }
+  to { opacity: 1; scale: 1; }
 }
 
 .rhythm__hours {
@@ -346,9 +425,7 @@ a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
   .rhythm__track::after,
   .mark {
     animation: none;
@@ -371,6 +448,19 @@ a:hover {
   text-transform: uppercase;
   color: var(--ink-soft);
   margin: 0 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section__label::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--blase);
+  box-shadow: 0.7rem 0 0 var(--darm);
+  margin-right: 0.7rem;
 }
 
 h2 {
@@ -396,6 +486,10 @@ h3 {
 
 .measure p + p {
   margin-top: 1.1rem;
+}
+
+.measure p {
+  color: var(--ink-soft);
 }
 
 /* ---------- Für wen ---------- */
@@ -436,17 +530,9 @@ h3 {
   border-bottom: 2px solid currentColor;
 }
 
-.thread--blase h3 {
-  color: var(--blase);
-}
-
-.thread--darm h3 {
-  color: var(--darm);
-}
-
-.thread--both h3 {
-  color: var(--ink);
-}
+.thread--blase h3 { color: var(--blase); }
+.thread--darm h3 { color: var(--darm); }
+.thread--both h3 { color: var(--ink); }
 
 .thread ul {
   margin: 0;
@@ -470,74 +556,171 @@ h3 {
   font-size: 0.9rem;
 }
 
-/* ---------- Screenshots ---------- */
+/* ---------- Bilder ---------- */
 
-.shots {
+.shots,
+.wide-shots {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  grid-template-columns: 1fr;
   margin: 0;
 }
 
-/* Bei vier Bildern auf mittleren Breiten lieber 2x2 als 3+1 */
-@media (min-width: 34rem) and (max-width: 62rem) {
-  .shots {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.wide-shots { margin-top: 2rem; }
+
+@media (min-width: 34rem) {
+  .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-.shots figure {
+@media (min-width: 40rem) {
+  .wide-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 62rem) {
+  .shots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .wide-shots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Zwei Bilder nebeneinander, auch am Desktop */
+.shots--pair {
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 34rem) {
+  .shots--pair { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; max-width: 34rem; }
+}
+
+.shots figure,
+.wide-shots figure,
+.watch-shots figure {
   margin: 0;
 }
 
-.shots img {
+.shots img,
+.wide-shots img,
+.watch-shots img,
+img[src*="shot-"] {
   width: 100%;
   height: auto;
+  max-width: 100%;
+  aspect-ratio: auto;
+  object-fit: fill;
   display: block;
   border-radius: 1.5rem;
   border: 1px solid var(--line);
   background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
-.shots figcaption {
+.shots figcaption,
+.wide-shots figcaption,
+.watch-shots figcaption {
   margin-top: 0.85rem;
   font-size: 0.85rem;
   color: var(--ink-soft);
 }
 
-/* Platzhalter, solange keine echten Screenshots hinterlegt sind */
-.shot-placeholder {
-  aspect-ratio: 9 / 19.5;
-  border-radius: 1.5rem;
-  border: 1px dashed var(--line);
-  background: var(--surface);
+.shots figcaption {
+  min-height: 3.2em;
+}
+
+/* Watch-Aufnahmen: drei kleine nebeneinander */
+.watch-shots {
   display: grid;
-  place-items: center;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  margin-top: 2rem;
+  max-width: 44rem;
+}
+
+.watch-shots img {
+  border-radius: 1.1rem;
+}
+
+/* ---------- Bericht für den Arzttermin ---------- */
+
+.bericht {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+@media (min-width: 48rem) {
+  .bericht { grid-template-columns: minmax(0, 21rem) 1fr; }
+}
+
+.bericht figure { margin: 0; }
+
+/* Das weiße Blatt darf auf der dunklen Seite leuchten */
+.bericht img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+}
+
+.bericht h2 { margin-top: 0; }
+
+.bericht p { color: var(--ink-soft); }
+
+/* ---------- Unterblöcke (Android, Quellcode) ---------- */
+
+.subblock {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--line-soft);
+  max-width: 58ch;
+}
+
+.subblock__title {
+  font-family: var(--display);
+  font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.7rem);
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+
+.subblock p {
   color: var(--ink-soft);
-  font-size: 0.8rem;
-  text-align: center;
-  padding: 1rem;
+}
+
+.subblock .shots--pair {
+  max-width: none;
 }
 
 /* ---------- Datenschutz-Panel ---------- */
 
 .panel {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--ink);
   border-radius: 1.75rem;
   padding: clamp(2rem, 5vw, 3.5rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blase), var(--darm));
 }
 
 .panel h2 {
-  color: var(--surface);
+  color: var(--ink);
 }
 
 .panel p {
-  color: rgba(231, 236, 232, 0.78);
+  color: var(--ink-soft);
 }
 
 .panel a {
-  color: var(--surface);
+  color: var(--blase);
 }
 
 .panel ul {
@@ -552,7 +735,7 @@ h3 {
 .panel li {
   padding-left: 1.6rem;
   position: relative;
-  color: rgba(231, 236, 232, 0.9);
+  color: var(--ink-soft);
   font-size: 0.95rem;
 }
 
@@ -565,13 +748,21 @@ h3 {
   height: 0.6rem;
   border-radius: 50%;
   background: var(--blase);
+  box-shadow: 0 0 8px rgba(232, 146, 59, 0.5);
 }
 
 .panel li:nth-child(even)::before {
   background: var(--darm);
+  box-shadow: 0 0 8px rgba(177, 153, 221, 0.5);
 }
 
-/* ---------- Preis ---------- */
+.panel__price {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+/* ---------- Preis (Altbestand, falls verlinkt) ---------- */
 
 .price {
   display: grid;
@@ -648,7 +839,7 @@ h3 {
   color: var(--ink-soft);
 }
 
-/* ---------- Fließtext (Rechtsseiten) ---------- */
+/* ---------- Fließtext (Unterseiten) ---------- */
 
 .prose {
   max-width: 42rem;
@@ -707,6 +898,11 @@ h3 {
   margin: 0;
 }
 
+.lede {
+  font-size: clamp(1.05rem, 1rem + 0.3vw, 1.25rem);
+  color: var(--ink-soft);
+}
+
 /* ---------- Fuß ---------- */
 
 .foot {
@@ -746,238 +942,6 @@ h3 {
   opacity: 0.85;
 }
 
-/* Bei vier Bildern auf mittleren Breiten lieber 2x2 als 3+1 */
-@media (min-width: 34rem) and (max-width: 62rem) {
-  .shots {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.mark--unten span { bottom: auto; top: calc(100% + 0.7rem); }
-.mark--ruhe { background: var(--paper); box-shadow: inset 0 0 0 2px var(--ink-soft); width: 0.7rem; height: 0.7rem; }
-
-/* ---------- Breite Aufnahmen (CarPlay) ---------- */
-
-.wide-shots {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
-  margin: 0 0 2rem;
-}
-
-/* Ab Tabletbreite immer zwei Spalten - damit ein einzelnes Bild halbe
-   Breite behaelt statt die Seite zu sprengen. */
-@media (min-width: 40rem) {
-  .wide-shots {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.wide-shots figure { margin: 0; }
-
-.wide-shots img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  display: block;
-  border-radius: 1.5rem;
-  border: 1px solid var(--line);
-  background: var(--surface);
-}
-
-.wide-shots figcaption {
-  margin-top: 0.85rem;
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-}
-
-/* Hochformat-Screenshots auf ein gemeinsames Mass bringen */
-.shots img {
-  aspect-ratio: 760 / 1574;
-  object-fit: cover;
-  object-position: top center;
-}
-
-
-/* ---------- Bildraster, Fassung mit sechs Screenshots ---------- */
-
-/* Sechs Hochformat-Aufnahmen: 3 Spalten am Desktop, 2 auf Tablets, 1 am Handy */
-.shots {
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 34rem) {
-  .shots {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 62rem) {
-  .shots {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.shots img {
-  aspect-ratio: 760 / 1574;
-  object-fit: cover;
-  object-position: top center;
-}
-
-/* CarPlay: greift ueber den Dateinamen, damit die Groesse unabhaengig
-   vom umgebenden Markup begrenzt bleibt. */
-img[src*="shot-carplay"] {
-  width: 100%;
-  max-width: 100%;
-  aspect-ratio: 1280 / 692;
-  object-fit: cover;
-  display: block;
-  border-radius: 1.5rem;
-  border: 1px solid var(--line);
-  background: var(--surface);
-}
-
-.wide-shots {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
-  margin: 2rem 0 0;
-}
-
-@media (min-width: 40rem) {
-  .wide-shots {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.wide-shots figure { margin: 0; }
-
-.wide-shots figcaption {
-  margin-top: 0.85rem;
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-}
-
-/* ===== BILDER: endgueltige Fassung, ersetzt alle frueheren Bildregeln ===== */
-
-/* Keine aspect-ratio, kein object-fit. Die Bilder haben gruppenweise
-   identische Masse, deshalb ergibt sich gleiche Hoehe von selbst.
-   aspect-ratio: auto und object-fit: fill heben frueher gesetzte Werte auf. */
-
-.shots,
-.wide-shots {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
-  margin: 0;
-}
-
-.wide-shots { margin-top: 2rem; }
-
-@media (min-width: 34rem) {
-  .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (min-width: 40rem) {
-  .wide-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (min-width: 62rem) {
-  .shots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  /* drei breite Aufnahmen */
-  .wide-shots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
-.shots figure,
-.wide-shots figure {
-  margin: 0;
-}
-
-.shots img,
-.wide-shots img,
-img[src*="shot-"] {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  aspect-ratio: auto;
-  object-fit: fill;
-  display: block;
-  border-radius: 1.5rem;
-  border: 1px solid var(--line);
-  background: var(--surface);
-}
-
-.shots figcaption,
-.wide-shots figcaption {
-  margin-top: 0.85rem;
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-}
-
-/* Zweizeilige Hoehe reservieren, damit die Reihen unten auf einer Linie enden */
-.shots figcaption {
-  min-height: 3.2em;
-}
-
-/* ===== ENDE BILDER ===== */
-
-/* ---------- Bericht für den Arzttermin ---------- */
-
-.bericht {
-  display: grid;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  grid-template-columns: 1fr;
-  align-items: start;
-}
-
-@media (min-width: 48rem) {
-  .bericht { grid-template-columns: minmax(0, 21rem) 1fr; }
-}
-
-.bericht figure { margin: 0; }
-
-.bericht img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0.5rem;
-  border: 1px solid var(--line);
-  background: #fff;
-  box-shadow: 0 12px 34px rgba(20, 49, 58, 0.12);
-}
-
-.bericht h2 { margin-top: 0; }
-
-/* ===== Navigation und Fussbereich, vereinheitlicht ===== */
-
-/* Kopfzeile bleibt stehen, damit man nach einem Sprung nicht zurueckscrollen muss */
-.masthead {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  background: var(--paper);
-}
-
-/* Navigation darf umbrechen statt Punkte zu verstecken */
-.masthead__inner { align-items: center; }
-
-.masthead nav {
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  row-gap: 0.4rem;
-}
-
-@media (max-width: 48rem) {
-  .masthead nav { gap: 0.35rem 0.75rem; font-size: 0.8rem; }
-  .masthead__inner { padding-block: 0.7rem; }
-  .wordmark { font-size: 1rem; }
-  .lang { padding: 0.15rem 0.55rem; font-size: 0.7rem; }
-}
-
-/* Mehr Luft hinter dem kursiven Einschub in der Ueberschrift */
-.hero h1 em { padding-right: 0.08em; }
-
-/* Sprung zurueck nach oben */
 .nach-oben {
   display: inline-block;
   margin-top: 1.5rem;
@@ -992,4 +956,10 @@ img[src*="shot-"] {
   line-height: 1.5;
   color: var(--ink-soft);
   opacity: 0.8;
+}
+
+/* CarPlay-Aufnahmen: feste Proportion */
+img[src*="shot-carplay"] {
+  aspect-ratio: 1280 / 692;
+  object-fit: cover;
 }
