@@ -1,0 +1,140 @@
+From c8a70399d11919dc8f6ee5aed05b05e9f83ebe75 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Andr=C3=A9=20Bajorat?= <andre@bajorat.de>
+Date: Fri, 4 Sep 2026 23:47:41 +0000
+Subject: [PATCH] Urinfarbe: 5 App-Stufen + Warnfarben getrennt (DE+EN)
+
+---
+ en/urine-colour.html | 26 ++++++++++++++++++++------
+ urinfarbe.html       | 37 ++++++++++++++++++++++++++++---------
+ 2 files changed, 48 insertions(+), 15 deletions(-)
+
+diff --git a/en/urine-colour.html b/en/urine-colour.html
+index 4a2a168..2c6660f 100644
+--- a/en/urine-colour.html
++++ b/en/urine-colour.html
+@@ -84,24 +84,38 @@
+ 
+   <section class="section wrap">
+     <div class="measure">
+-      <h2>Colours at a glance</h2>
++      <h2>The five levels in the app</h2>
++      <p>The app tracks five colours — the shades that come up regularly during daily
++        catheterisation. Each can be selected with a single tap.</p>
+ 
+       <div class="farbe">
+         <div class="farbe__dot" style="background:#f0f0e8"></div>
+-        <div><h3>Almost colourless</h3><p>Very high fluid intake. Fine with ISC as long as individual volumes stay below 400–500 ml. Discuss with your doctor if you have heart or kidney conditions.</p></div>
++        <div><h3>💧 Clear</h3><p>Very high fluid intake. Fine with ISC as long as individual volumes stay below 400–500 ml. Discuss with your doctor if you have heart or kidney conditions.</p></div>
+       </div>
+       <div class="farbe">
+         <div class="farbe__dot" style="background:#f5e6a0"></div>
+-        <div><h3>Light yellow / Straw</h3><p>Normal. The pigment urochrome is adequately diluted. Your fluid intake is on track.</p></div>
++        <div><h3>🍋 Light yellow</h3><p>Normal. The pigment urochrome is adequately diluted. Your fluid intake is on track.</p></div>
+       </div>
+       <div class="farbe">
+-        <div class="farbe__dot" style="background:#e0b830"></div>
+-        <div><h3>Dark yellow / Amber</h3><p>Not enough fluid. Concentrated urine irritates the bladder lining and encourages UTIs. Drink more — the <a href="/en/fluid-intake.html">fluid intake page</a> explains how much.</p></div>
++        <div class="farbe__dot" style="background:#d4b840"></div>
++        <div><h3>🟡 Yellow</h3><p>Unremarkable, but concentration is rising. Consider drinking a little more — the <a href="/en/fluid-intake.html">fluid intake page</a> explains how much.</p></div>
++      </div>
++      <div class="farbe">
++        <div class="farbe__dot" style="background:#c89820"></div>
++        <div><h3>🟠 Dark yellow</h3><p>Not enough fluid. Concentrated urine irritates the bladder lining and encourages UTIs. Drink more.</p></div>
+       </div>
+       <div class="farbe">
+         <div class="farbe__dot" style="background:#c8b898; opacity:.7"></div>
+-        <div><h3>Cloudy / Milky</h3><p>Often a sign of a <a href="/en/uti-neurogenic-bladder.html">urinary tract infection</a>, especially with odour, fever or increased spasticity. Occasional cloudiness can also come from mucus or sediment — if it lasts longer than a day, have the urine tested.</p></div>
++        <div><h3>🌫️ Cloudy</h3><p>Often a sign of a <a href="/en/uti-neurogenic-bladder.html">urinary tract infection</a>, especially with odour, fever or increased spasticity. Occasional cloudiness can also come from mucus or sediment — if it lasts longer than a day, have the urine tested. Persistent cloudiness triggers an alert in the app.</p></div>
+       </div>
++    </div>
++  </section>
++
++  <section class="section wrap">
++    <div class="measure">
++      <h2>Colours that need a doctor</h2>
++      <p>These colours do not appear in the app — because they belong in a clinic, not a log.</p>
++
+       <div class="farbe">
+         <div class="farbe__dot" style="background:#e8a0a0"></div>
+         <div><h3>Pink / Slightly reddish</h3><p>A few pink drops after catheterisation may come from minor mucosal irritation — especially with dry or oversized catheters. If it recurs or increases: have it checked.</p></div>
+diff --git a/urinfarbe.html b/urinfarbe.html
+index c749865..8d0360d 100644
+--- a/urinfarbe.html
++++ b/urinfarbe.html
+@@ -89,12 +89,14 @@
+ 
+   <section class="section wrap">
+     <div class="measure">
+-      <h2>Die Farben im Überblick</h2>
++      <h2>Die fünf Stufen in der App</h2>
++      <p>Die App erfasst fünf Farben — die Abstufungen, die beim täglichen Katheterisieren
++        regelmäßig vorkommen. Sie lassen sich bei jedem Eintrag mit einem Tipp auswählen.</p>
+ 
+       <div class="farbe">
+         <div class="farbe__dot" style="background:#f0f0e8"></div>
+         <div>
+-          <h3>Fast farblos</h3>
++          <h3>💧 Durchsichtig</h3>
+           <p>Sehr hohe Trinkmenge. Beim ISK in Ordnung, solange die Einzelmengen pro
+             Katheterisierung nicht über 400–500 ml liegen. Bei Herz- oder Nierenerkrankung
+             mit dem Arzt besprechen.</p>
+@@ -104,32 +106,49 @@
+       <div class="farbe">
+         <div class="farbe__dot" style="background:#f5e6a0"></div>
+         <div>
+-          <h3>Hellgelb / Strohgelb</h3>
++          <h3>🍋 Hellgelb</h3>
+           <p>Normal. Der Farbstoff Urochrom ist ausreichend verdünnt. Die Trinkmenge passt.</p>
+         </div>
+       </div>
+ 
+       <div class="farbe">
+-        <div class="farbe__dot" style="background:#e0b830"></div>
++        <div class="farbe__dot" style="background:#d4b840"></div>
+         <div>
+-          <h3>Dunkelgelb / Bernstein</h3>
++          <h3>🟡 Gelb</h3>
++          <p>Unauffällig, aber die Konzentration steigt. Eventuell etwas mehr trinken —
++            die <a href="/trinkmenge.html">Trinkmenge-Seite</a> erklärt, wie viel.</p>
++        </div>
++      </div>
++
++      <div class="farbe">
++        <div class="farbe__dot" style="background:#c89820"></div>
++        <div>
++          <h3>🟠 Dunkelgelb</h3>
+           <p>Zu wenig getrunken. Konzentrierter Urin reizt die Blasenschleimhaut und
+-            begünstigt Harnwegsinfekte. Mehr trinken — die
+-            <a href="/trinkmenge.html">Trinkmenge-Seite</a> erklärt, wie viel.</p>
++            begünstigt Harnwegsinfekte. Mehr trinken.</p>
+         </div>
+       </div>
+ 
+       <div class="farbe">
+         <div class="farbe__dot" style="background:#c8b898; opacity:.7"></div>
+         <div>
+-          <h3>Trüb / Milchig</h3>
++          <h3>🌫️ Trüb</h3>
+           <p>Häufig ein Hinweis auf einen <a href="/hwi.html">Harnwegsinfekt</a>, vor allem
+             wenn Geruch, Fieber oder erhöhte Spastik dazukommen. Einzelne Trübungen können
+             auch von Schleim oder Sediment stammen — hält es länger als einen Tag an, Urin
+-            untersuchen lassen.</p>
++            untersuchen lassen. Anhaltend trüber Urin löst in der App einen Hinweis aus.</p>
+         </div>
+       </div>
+ 
++    </div>
++  </section>
++
++  <section class="section wrap">
++    <div class="measure">
++      <h2>Farben, die zum Arzt gehören</h2>
++      <p>Diese Farben kommen in der App nicht vor — weil sie nicht ins Protokoll gehören,
++        sondern ärztlich abgeklärt werden sollten.</p>
++
+       <div class="farbe">
+         <div class="farbe__dot" style="background:#e8a0a0"></div>
+         <div>
+-- 
+2.43.0
+
