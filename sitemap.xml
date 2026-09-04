@@ -22,4 +22,8 @@
   <url><loc>https://blaseunddarm.de/en/autonomic-dysreflexia.html</loc><priority>0.7</priority></url>
   <url><loc>https://blaseunddarm.de/trinkmenge.html</loc><priority>0.9</priority></url>
   <url><loc>https://blaseunddarm.de/en/fluid-intake.html</loc><priority>0.7</priority></url>
+  <url><loc>https://blaseunddarm.de/wissen.html</loc><priority>1.0</priority></url>
+  <url><loc>https://blaseunddarm.de/en/knowledge.html</loc><priority>0.8</priority></url>
+  <url><loc>https://blaseunddarm.de/urinfarbe.html</loc><priority>0.9</priority></url>
+  <url><loc>https://blaseunddarm.de/en/urine-colour.html</loc><priority>0.7</priority></url>
 </urlset>
